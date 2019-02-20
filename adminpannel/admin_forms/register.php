@@ -4,8 +4,8 @@ function __autoload($class)
     require_once "classes/$class.php";
 }
 if (isset($_POST['submit'])) {
-  $user = new adduser();
-  $user->
+  $user = new user();
+  $user->addUser($_POST);
 
 
 
