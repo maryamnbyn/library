@@ -1,0 +1,129 @@
+nav.vn-navbar{
+	border-radius : 0 ;
+	margin-bottom : 0 ;
+}
+@media screen and (max-width : 768px ){
+  ul.navbar-right > li > a{
+	width : 50px !important;
+	float :left !important; 
+	/*padding-left : 2.5px;*/
+	
+}}
+
+div.about-us ,div.products {
+	margin : 50px  0 ;
+}
+div.glyphicon-vn {
+	
+	background-color : #e2e2e2;
+	padding-top : 25px;
+}
+div.product {
+	min-height : 200px;
+	background-size : cover;
+	background-repeat : no-repeat;
+	
+	
+	
+	
+}
+span.exp-products {
+	position : absolute;
+	bottom :0 ;
+	left:0;
+	width :100%;
+	background-color: #C8133D;
+	color: white;
+	text-align : center;
+	padding:15px 15px;
+	opacity:0 ;
+
+	
+}
+man{
+     color: white;
+}
+div.product:hover span.exp-products {
+	opacity : 1 ;
+}
+div.row{
+	margin : 50px;
+}
+div.contact-us{
+	padding : 80px 0 ;
+}
+
+div.footer {
+	color:#fff;
+
+	
+}
+textarea {
+    resize:none;
+}
+
+.comment-box {
+
+    padding: 10px;
+    margin-bottom: 4px ;
+    background-color:#F5F5DC ;
+    border-radius: 8px;
+    position: relative;
+    
+    
+}
+.nav-mn {
+    padding-right: 45px;
+
+}
+
+.edit-form {
+    position: absolute;
+    top :0px ;
+    right : 0px;
+    
+}
+.edit-form button {
+    width: 40px;
+    height: 20px ;
+    color : #282828;
+    margin-right: 10px;
+    opacity: 0.7;
+    margin-top: 10px;
+
+    
+}
+.edit-form button:hover {
+    opacity: 1 ;;
+    
+}
+.delete-form {
+    position: absolute;
+    top :0px ;
+    right : 60px;
+    
+}
+.delete-form button {
+    width: 60px;
+    height: 20px ;
+    color : #282828;
+    margin-right: 10px;
+    opacity: 0.7;
+    margin-top: 10px;
+
+    
+}
+.delete-form button:hover {
+    opacity: 1 ;
+    
+}
+.fa{
+    font-size: 1.2em;
+    padding-right: 10px;
+    }
+.fa-thumbs-down, .fa-thumbs-o-down {
+    transform:rotateY(180deg);
+    }
+i{
+    color :blue;
+}
