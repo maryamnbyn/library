@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="city" name="city" class="form-control" placeholder="city" required="required" autofocus="autofocus">
+                                <input type="text" name="city" class="form-control" placeholder="city" required="required" autofocus="autofocus">
                                 <label for="city">city</label>
                             </div>
                         </div>
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <input type="postcode" name="postcode" class="form-control" placeholder="Password" required="required">
-                                <label for="inputPassword">Password</label>
+                                <label for="inputPassword">postCode</label>
                             </div>
                         </div>
 

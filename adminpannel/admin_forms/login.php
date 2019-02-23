@@ -1,19 +1,23 @@
 <?php
-session_start();
-function __autoload($class)
+include_once('classes/user.php');
+if (isset($_POST['submit'])){
+    $email =$_POST['email'];
+    $pass = $_POST['pass'];
+    $object = new user();
+    $object->userLogin($email,$pass);
+}
+$errors = array();
+if (isset($_POST['submit']))
 {
-    require_once "classes/$class.php";
-}
-if (isset($_POST['login'])) {
-
-    $user = $_POST['name'];
-    $pass = $_POST['password'];
-
+    if (empty($email)) { array_push($errors, "email is required"); }
+    if (strlen($_POST['email']) < 5) { array_push($errors, "email must be atleast 6 letters in length"); }
+    if (strlen($_POST['pass']) < 5){ array_push($errors, "password must be atleast 6 letters in length"); }
 }
 
-$user = new user();
-$users = $user->userLogin();
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,31 +44,32 @@ $users = $user->userLogin();
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login            <?php
-            if (isset($message)) {
-                echo $message;
-            } ?></div>
+        <div class="card-header"> Login </br>
+            <?php if (isset($_POST['submit'])&& (count($errors)> 0)){
+                foreach ($errors as $error)
+                    echo $error ;}?> </div>
         <div class="card-body">
+
             <form method="post" action="">
+
+
+
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="name" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
-                        <label for="inputEmail">name</label>
+                        <input type="text" name="email" class="form-control" placeholder="email" required="required" autofocus="autofocus">
+                        <label for="inputEmail">User Name</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required="required">
+                        <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
                         <label for="inputPassword">Password</label>
                     </div>
                 </div>
 
-                <input type="submit" name = "login" class="btn btn-primary"></input>
+                <input type="submit" name="submit" class="btn btn-primary btn-block"  value="Login" "></input>
             </form>
-            <div class="text-center">
-                <a class="d-block small mt-3" href="register.html">Register an Account</a>
-                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-            </div>
+
         </div>
     </div>
 </div>
@@ -79,3 +84,4 @@ $users = $user->userLogin();
 </body>
 
 </html>
+}

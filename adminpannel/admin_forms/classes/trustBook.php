@@ -6,7 +6,7 @@ class trustbook extends Db
     //select all data from the data base
     public function select()
     {
-        $sql = "select book.id ,book.name  , trustbook.lend_of_book , trustbook.to_take_back from book,trustbook
+        $sql = "select book.id ,book.name ,users.family , trustbook.lend_of_book , trustbook.to_take_back from book,trustbook,users
 WHERE book.id = trustbook.bookID
 ";
         $result = $this->connect()->query($sql);
@@ -28,6 +28,7 @@ WHERE book.id = trustbook.bookID
 
 
     }
+
     public function getusers()
     {
         $sql = "select * from users";
@@ -37,6 +38,7 @@ WHERE book.id = trustbook.bookID
 
 
     }
+
     public function getwriters()
     {
         $sql = "select * from writer";
@@ -46,8 +48,6 @@ WHERE book.id = trustbook.bookID
 
 
     }
-
-
 
 
     public function insert($fields)
@@ -76,7 +76,7 @@ WHERE book.id = trustbook.bookID
     public function selectOne($id)
     {
 
-        $sql = "SELECT * FROM trustbook WHERE id = :id";
+        $sql = "SELECT * from trustbook WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -115,7 +115,7 @@ WHERE book.id = trustbook.bookID
         $stmtExec = $stmt->execute();
         if ($stmtExec) {
 
-            header('Location: listTrustBook.php');
+            header('Location: index.php');
         }
     }
 

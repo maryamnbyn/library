@@ -17,39 +17,11 @@ if (isset($_GET['del'])){
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<!--navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">List Book</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<?php include "admin_thems/navbar.php"?>
+<?php include "admin_thems/sidebar.php"?>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <select class="nav-link" href="#">Home <span class="sr-only">(current)</span>
-                <option value="0">1</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option></select>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">contanct</a>
-            </li>
-
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </div>
-</nav>
 <!--create table-->
-<div class="container mt-4">
+<div ">
     <div class="col-lg-12">
         <div class="jumbotron">
             <h4 class="mb-4">All Books</h4>
@@ -92,5 +64,22 @@ if (isset($_GET['del'])){
 
     </div>
 </div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Page level plugin JavaScript-->
+<script src="vendor/chart.js/Chart.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin.min.js"></script>
+
+<!-- Demo scripts for this page-->
+<script src="js/demo/chart-area-demo.js"></script>
+<script src="js/demo/chart-bar-demo.js"></script>
+<script src="js/demo/chart-pie-demo.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 class Db{
-    public function connect()
+    protected function connect()
     {
         //connection
         try {

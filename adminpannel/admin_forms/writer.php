@@ -46,6 +46,8 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body class="bg-dark">
+<?php include "admin_thems/navbar.php"?>
+<?php include "admin_thems/sidebar.php"?>
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
