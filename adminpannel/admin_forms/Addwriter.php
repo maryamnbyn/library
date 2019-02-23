@@ -1,15 +1,16 @@
 <?php
-function __autoload($class)
-{
-    require_once "classes/$class.php";
-}
-if (isset($_POST['submit'])) {
-    $writer = new writer();
-    $writer->addWriter($_POST);
+
+    function __autoload($class)
+    {
+        require_once "classes/$class.php";
+    }
+    if (isset($_POST['submit'])) {
+        $writer = new writer();
+        $writer->addWriter($_POST);
 
 
 
-}
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -3,23 +3,23 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if (isset($_POST['submit'])){
 
-
-    $name = $_POST['name'];
-    $date = $_POST['date'];
-    $title = $_POST['title'];
-    $writerID = $_POST['writerID'];
-    $categoryID = $_POST['categoryID'];
-    $num = $_POST['num'];
+if (isset($_POST['submit']))
+{
+    $name      = $_POST['name'];
+    $date      = $_POST['date'];
+    $title     = $_POST['title'];
+    $writerID  = $_POST['writerID'];
+    $categoryID= $_POST['categoryID'];
+    $num       = $_POST['num'];
 
     $fields = [
-        'name'=>$name,
-        'date_of_print'=>$date,
-        'title'=>$title,
-        'writerID'=>$writerID,
-        'categoryID'=>$categoryID,
-        'num_of_print'=>$num,
+        'name'          => $name,
+        'date_of_print' => $date,
+        'title'         => $title,
+        'writerID'      => $writerID,
+        'categoryID'    => $categoryID,
+        'num_of_print'  => $num,
     ];
 
     $book = new book();
@@ -51,8 +51,8 @@ if (isset($_POST['submit'])){
 </head>
 
 <body class="bg-dark">
-<?php include "admin_thems/navbar.php"?>
-<?php include "admin_thems/sidebar.php"?>
+<?php include "admin_thems/navbar.php" ?>
+<?php include "admin_thems/sidebar.php" ?>
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
@@ -63,13 +63,15 @@ if (isset($_POST['submit'])){
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="name" class="form-control"  required="required" autofocus="autofocus">
+                                <input type="text" name="name" class="form-control" required="required"
+                                       autofocus="autofocus">
                                 <label for="Name">name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="date" name="date" class="form-control" placeholder="Date Of Print" required="required">
+                                <input type="date" name="date" class="form-control" placeholder="Date Of Print"
+                                       required="required">
                                 <label for="date">Date Of Print</label>
                             </div>
                         </div>
@@ -83,13 +85,15 @@ if (isset($_POST['submit'])){
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="writerID" class="form-control" placeholder="witerID" required="required">
+                        <input type="text" name="writerID" class="form-control" placeholder="witerID"
+                               required="required">
                         <label for="witerID">witerID</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="categoryID" class="form-control" placeholder="categoryID" required="required">
+                        <input type="text" name="categoryID" class="form-control" placeholder="categoryID"
+                               required="required">
                         <label for="categoryID">categoryID</label>
                     </div>
                 </div>
@@ -98,13 +102,14 @@ if (isset($_POST['submit'])){
 
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="num" class="form-control" placeholder="Num Of Print" required="required">
+                                <input type="text" name="num" class="form-control" placeholder="Num Of Print"
+                                       required="required">
                                 <label for="Num Of Print">Num Of Print</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <input type="submit" name = "submit" class="btn btn-primary"></input>
+                <input type="submit" name="submit" class="btn btn-primary"></input>
             </form>
 
         </div>

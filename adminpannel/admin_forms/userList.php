@@ -1,13 +1,15 @@
 <?php
-function __autoload($class)
-{
-    require_once "classes/$class.php";
-}
-if (isset($_GET['del'])){
-    $id = $_GET['del'];
-    $user =new user();
-    $user->destroy($id);
-}
+
+    function __autoload($class)
+    {
+        require_once "classes/$class.php";
+    }
+    if (isset($_GET['del']))
+    {
+        $id   = $_GET['del'];
+        $user = new user();
+        $user->destroy($id);
+    }
 
 ?>
 <html>

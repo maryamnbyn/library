@@ -6,30 +6,31 @@ function __autoload($class)
 if (isset($_POST['submit'])){
 
 
-    $name = $_POST['name'];
-    $userID = $_POST['userID'];
-    $date = $_POST['date'];
-    $datee = $_POST['datee'];
+    $name     = $_POST['name'];
+    $userID   = $_POST['userID'];
+    $date     = $_POST['date'];
+    $datee    = $_POST['datee'];
     $writerID = $_POST['writerID'];
 
-    $fields = [
+    $fields =
+        [
         'bookID'=>$name,
         'userID'=>$userID,
         'lend_of_book'=>$datee,
         'to_take_back'=>$datee,
         'writerID'=>$writerID,
-    ];
+        ];
 
     $trustbook = new trustbook();
     $trustbook->insert($fields);
 
 }
-$trustbook = new trustbook();
-$books = $trustbook->getBooks();
-$trustbook = new trustbook();
-$users = $trustbook->getusers();
-$trustbook = new trustbook();
-$writers = $trustbook->getwriters();
+            $trustbook = new trustbook();
+            $books     = $trustbook->getBooks();
+            $trustbook = new trustbook();
+            $users     = $trustbook->getusers();
+            $trustbook = new trustbook();
+            $writers   = $trustbook->getwriters();
 ?>
 
 

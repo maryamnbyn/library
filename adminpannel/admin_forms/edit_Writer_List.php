@@ -1,21 +1,22 @@
 <?php
-function __autoload($class)
-{
-    require_once "classes/$class.php";
-}
-if (isset($_POST['submit'])){
+
+    function __autoload($class)
+    {
+        require_once "classes/$class.php";
+    }
+    if (isset($_POST['submit'])){
 
 
-    $writer = new writer();
-    $writer->editWriter($_POST);
-}
+        $writer = new writer();
+        $writer->editWriter($_POST);
+    }
 
-if(isset($_GET['id'])){
-    $uid = $_GET['id'];
-    $writer = new writer();
-    $result = $writer->selectOne($uid);
+    if(isset($_GET['id'])){
+        $uid = $_GET['id'];
+        $writer = new writer();
+        $result = $writer->selectOne($uid);
 
-}
+    }
 
 
 
