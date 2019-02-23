@@ -4,24 +4,11 @@ function __autoload($class)
     require_once "classes/$class.php";
 }
 if (isset($_POST['submit'])) {
-
-
-    $name = $_POST['name'];
-    $birthday= $_POST['birthday'];
-    $city = $_POST['city'];
-
-
-
-
-    $fields = [
-        'name' => $name,
-        'birthday' => $birthday,
-        'city' => $city,
-
-    ];
     $writer = new writer();
+    $writer->addWriter($_POST);
 
-    $writer->insert($fields);
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -51,7 +38,7 @@ if (isset($_POST['submit'])) {
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login  </div>
+        <div class="card-header">Add Writer  </div>
         <div class="card-body">
             <form method="post" action="">
                 <div class="form-group">
@@ -75,10 +62,7 @@ if (isset($_POST['submit'])) {
 
                 <input type="submit" name = "submit" class="btn btn-primary"></input>
             </form>
-            <div class="text-center">
-                <a class="d-block small mt-3" href="register.html">Register an Account</a>
-                <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
-            </div>
+
         </div>
     </div>
 </div>

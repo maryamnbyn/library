@@ -51,7 +51,7 @@
             <a class="dropdown-item" href="index.php">List Books</a>
             <a class="dropdown-item" href="create_trustbook.php">Add Trust Books</a>
             <a class="dropdown-item" href="listTrustBook.php">List Trust Books</a>
-            <a class="dropdown-item" href="writer.php">Add writer</a>
+            <a class="dropdown-item" href="Addwriter.php">Add writer</a>
             <a class="dropdown-item" href="writerList.php">writer List</a>
             <a class="dropdown-item" href="userList.php">user List</a>
 

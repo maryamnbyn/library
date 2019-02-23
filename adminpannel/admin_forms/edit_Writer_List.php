@@ -3,19 +3,20 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-include "classes/writer.php";
+if (isset($_POST['submit'])){
+
+
+    $writer = new writer();
+    $writer->editWriter($_POST);
+}
+
 if(isset($_GET['id'])){
     $uid = $_GET['id'];
     $writer = new writer();
-    $writer = $writer->selectOne($uid);
+    $result = $writer->selectOne($uid);
 
 }
 
-if (isset($_post['submit'])){
-$id = $_post['id'];
-    $writer = new writer();
-    $writer->updateWriter($_POST,$id);
-}
 
 
 
@@ -34,20 +35,21 @@ $id = $_post['id'];
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Edit An User</div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="hidden" name="id" value="<?php echo $result['id'];?>">
-                                <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus" value="<?php echo $result['name'];?>">
-                                <label for="firstName">name</label>
+                                <input type="hidden" name="id" value="<?= $result['id'] ?>">
+
+                                <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus" value="<?=  $result['name'];?>">
+                                <label for="firstName">First name</label>
                             </div>
 
                         </div>
-                        <div class="col-md-6">
+                        <div class="form-group">
                             <div class="form-label-group">
                                 <input type="date" name="birthday" class="form-control" placeholder="birthday" required="required" value="<?php echo $result['birthday'];?>">
                                 <label for="birthday">birthday</label>
@@ -57,12 +59,20 @@ $id = $_post['id'];
                 </div>
 
                 <div class="form-group">
-                    <div class="form-label-group">
-                        <input type="text" name="city" class="form-control" placeholder="city" required="required" value="<?php echo $result['city'];?>">
-                        <label for="city">city</label>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" name="city" class="form-control" placeholder="city" required="required" autofocus="autofocus" value="<?php echo $result['city'];?>">
+                                <label for="city">city</label>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
+
+
+                    </div>
                     <input type="submit" name = "submit" class="btn btn-primary"></input>
 
             </form>

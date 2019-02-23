@@ -35,7 +35,7 @@ if(isset($_GET['id'])){
 
             <div class="container">
                 <div class="card card-register mx-auto mt-5">
-                    <div class="card-header">Register an Account</div>
+                    <div class="card-header">Edit An User</div>
                     <div class="card-body">
                         <form action="" method="post">
                             <div class="form-group">
@@ -44,7 +44,7 @@ if(isset($_GET['id'])){
                                         <div class="form-label-group">
                                             <input type="hidden" name="id" value="<?= $result['id'] ?>">
 
-                                            <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus" value="<?php echo $result['name'];?>">
+                                            <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus" value="<?=  $result['name'];?>">
                                             <label for="firstName">First name</label>
                                         </div>
 
