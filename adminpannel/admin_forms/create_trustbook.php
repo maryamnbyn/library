@@ -44,7 +44,7 @@ $writers = $trustbook->getwriters();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Register</title>
+    <title>Add Trust Book</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -60,7 +60,7 @@ $writers = $trustbook->getwriters();
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Add TrustBook</div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">

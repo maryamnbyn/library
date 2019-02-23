@@ -13,7 +13,7 @@ if (isset($_GET['del'])){
 <html>
 <head>
     <meta charset=utf-8>
-    <title>List Trust Book</title>
+    <title>User List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -25,7 +25,7 @@ if (isset($_GET['del'])){
 <div>
     <div class="col-lg-12">
         <div class="jumbotron">
-            <h4 class="mb-4">List Trust Book!</h4>
+            <h4 class="mb-4">User List!</h4>
             <table class="table">
                 <thead>
                 <tr>
