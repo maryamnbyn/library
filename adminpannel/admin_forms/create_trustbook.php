@@ -14,11 +14,11 @@ if (isset($_POST['submit'])){
 
     $fields =
         [
-        'bookID'=>$name,
-        'userID'=>$userID,
-        'lend_of_book'=>$datee,
-        'to_take_back'=>$datee,
-        'writerID'=>$writerID,
+        'bookID'      => $name,
+        'userID'      => $userID,
+        'lend_of_book'=> $datee,
+        'to_take_back'=> $datee,
+        'writerID'    => $writerID,
         ];
 
     $trustbook = new trustbook();

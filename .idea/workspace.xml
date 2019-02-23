@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3143b0af-d34a-4f6b-82da-6272c5dfcdbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/userList.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/userList.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="78" column="41" lean-forward="true" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
+            <state relative-caret-position="352">
+              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -56,7 +51,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="462">
               <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
             </state>
           </provider>
@@ -65,7 +60,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="330">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
@@ -93,10 +88,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/userList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-858">
+            <state relative-caret-position="198">
               <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
@@ -188,9 +183,9 @@
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/userList.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" />
       </list>
     </option>
   </component>
@@ -282,12 +277,12 @@
       <workItem from="1550382438920" duration="18241000" />
       <workItem from="1550486408334" duration="14473000" />
       <workItem from="1550839942860" duration="18697000" />
-      <workItem from="1550901457488" duration="10255000" />
+      <workItem from="1550901457488" duration="10583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124067000" />
+    <option name="totallyTimeSpent" value="124395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -515,24 +510,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="78" column="41" lean-forward="true" selection-start-line="78" selection-start-column="41" selection-end-line="78" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/userList.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -547,17 +535,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/sidebar.php">
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="49" column="51" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+        <state relative-caret-position="330">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/userList.php">
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-858">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="462">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
         </state>
       </provider>
     </entry>
