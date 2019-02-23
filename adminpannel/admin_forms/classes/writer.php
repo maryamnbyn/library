@@ -76,7 +76,8 @@ class writer extends Db
 
         $stmt = $this->connection->prepare($sql);
 
-        $stmt->execute([
+        $stmt->execute(
+            [
             ":id"           => $writer['id'],
             ":fname"        => $writer['name'],
             ":birthday"     => $writer['birthday'],
