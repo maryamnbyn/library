@@ -6,7 +6,6 @@ function __autoload($class)
 if (isset($_POST['submit']))
 {
 
-
     $user = new user();
     $user->editUsers($_POST);
 }

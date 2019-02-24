@@ -23,9 +23,8 @@ if (isset($_GET['del'])) {
 <?php include "admin_thems/sidebar.php" ?>
 
 <!--create table-->
-<div
-">
-<div class="col-lg-12">
+
+<div class="col-md-10 mt-3">
     <div class="jumbotron">
         <h4 class="mb-4">List Trust Book!</h4>
         <table class="table">

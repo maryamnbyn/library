@@ -39,7 +39,7 @@ class writer extends Db
     public function selectWriter()
     {
 
-        $sql = "select * from writer";
+        $sql    = "select * from writer";
         $result = $this->connection->prepare($sql);
         $result->execute();
         return $result->fetchAll();
@@ -49,7 +49,7 @@ class writer extends Db
 
     public function destroy($id)
     {
-        $sql = "DELETE FROM writer WHERE id = :id";
+        $sql  = "DELETE FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -59,7 +59,7 @@ class writer extends Db
     public function selectOne($id)
     {
 
-        $sql = "SELECT * FROM writer WHERE id = :id";
+        $sql  = "SELECT * FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();

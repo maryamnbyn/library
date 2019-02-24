@@ -3,7 +3,8 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if (isset($_POST['submit'])){
+if (isset($_POST['submit']))
+{
 
 
     $name     = $_POST['name'];

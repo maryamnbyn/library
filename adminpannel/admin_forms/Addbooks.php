@@ -4,28 +4,17 @@ function __autoload($class)
     require_once "classes/$class.php";
 }
 
-if (isset($_POST['submit']))
-{
-    $name      = $_POST['name'];
-    $date      = $_POST['date'];
-    $title     = $_POST['title'];
-    $writerID  = $_POST['writerID'];
-    $categoryID= $_POST['categoryID'];
-    $num       = $_POST['num'];
-
-    $fields = [
-        'name'          => $name,
-        'date_of_print' => $date,
-        'title'         => $title,
-        'writerID'      => $writerID,
-        'categoryID'    => $categoryID,
-        'num_of_print'  => $num,
-    ];
-
+if (isset($_POST['submit'])) {
     $book = new book();
+    $book->addBook($_POST, $_FILES);
 
-    $book->insert($fields);
+
 }
+
+$book = new book();
+$categoryBooks = $book->categoryBook();
+$book = new book();
+$writers = $book->getwriters();
 ?>
 
 
@@ -58,12 +47,12 @@ if (isset($_POST['submit']))
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Add Books</div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="name" class="form-control" required="required"
+                                <input type="text" name="name" class="form-control"
                                        autofocus="autofocus">
                                 <label for="Name">name</label>
                             </div>
@@ -71,7 +60,7 @@ if (isset($_POST['submit']))
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <input type="date" name="date" class="form-control" placeholder="Date Of Print"
-                                       required="required">
+                                >
                                 <label for="date">Date Of Print</label>
                             </div>
                         </div>
@@ -85,16 +74,30 @@ if (isset($_POST['submit']))
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="writerID" class="form-control" placeholder="witerID"
-                               required="required">
-                        <label for="witerID">witerID</label>
+                        <select type="text" name="writerID" class="form-control" placeholder="witerID"
+                        >
+                            <label for="witerID">witerID</label>
+                            <?php
+                            foreach ($writers as $writer) {
+                                ?>
+                                <option value="<?= $writer['id'] ?>"><?= $writer['name'] ?></option>
+
+                            <?php } ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="categoryID" class="form-control" placeholder="categoryID"
-                               required="required">
+                        <select type="text" name="categoryID" class="form-control" placeholder="categoryID"
+                               r>
                         <label for="categoryID">categoryID</label>
+                            <?php
+                            foreach ($categoryBooks as $categoryBook) {
+                                ?>
+                                <option value="<?= $categoryBook['id'] ?>"><?= $categoryBook['title'] ?></option>
+
+                            <?php } ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -103,8 +106,15 @@ if (isset($_POST['submit']))
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <input type="text" name="num" class="form-control" placeholder="Num Of Print"
-                                       required="required">
+                                >
                                 <label for="Num Of Print">Num Of Print</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="file" name="picbook" class="form-control" placeholder="picbook"
+                                >
+                                <label for="picbook">Pictures Books</label>
                             </div>
                         </div>
                     </div>

@@ -3,9 +3,10 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if (isset($_GET['del'])){
+
+if (isset($_GET['del'])) {
     $id = $_GET['del'];
-    $book =new book();
+    $book = new book();
     $book->destroy($id);
 }
 ?>
@@ -17,52 +18,54 @@ if (isset($_GET['del'])){
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<?php include "admin_thems/navbar.php"?>
-<?php include "admin_thems/sidebar.php"?>
+<?php include "admin_thems/navbar.php" ?>
+<?php include "admin_thems/sidebar.php" ?>
 
 <!--create table-->
-<div ">
-    <div class="col-lg-12">
-        <div class="jumbotron">
-            <h4 class="mb-4">All Books</h4>
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Book Name</th>
-                    <th scope="col">Date Of print</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">num of print</th>
-                    <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $book = new book();
-                $rows = $book->select();
-                foreach ($rows as $row) {
-                    ?>
-                    <tr>
-                        <th scope="row"><?php echo $row['id'];?></th>
-                        <td><?php echo  $row['name'];?></td>
-                        <td><?php echo $row['date_of_print'];?></td>
-                        <td><?php echo $row['title'];?></td>
-                        <td><?php echo $row['num_of_print'];?></td>
 
-                        <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $row['id'];?>">Edit</a>&nbsp
-                            <a class="btn btn-sm btn-danger" href="index.php?del=<?php echo $row['id'];?>">Delete</a></td>
-                    </tr>
-                    <?php
-
-                }
+<div class="col-md-10 mt-3">
+    <div class="jumbotron">
+        <h4 class="mb-4">All Books</h4>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Book Name</th>
+                <th scope="col">Date Of print</th>
+                <th scope="col">Title</th>
+                <th scope="col">num of print</th>
+                <th scope="col">book Image</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $book = new book();
+            $rows = $book->select();
+            foreach ($rows as $row) {
                 ?>
+                <tr>
+                    <th scope="row"><?php echo $row['id']; ?></th>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['date_of_print']; ?></td>
+                    <td><?php echo $row['title']; ?></td>
+                    <td><?php echo $row['num_of_print']; ?></td>
+                    <td><?php echo $row['bookImage']; ?></td>
+
+                    <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp
+                        <a class="btn btn-sm btn-danger" href="index.php?del=<?php echo $row['id']; ?>">Delete</a></td>
+                </tr>
+                <?php
+
+            }
+            ?>
 
 
-                </tbody>
-            </table>
-        </div>
-
+            </tbody>
+        </table>
     </div>
+
+</div>
 </div>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
