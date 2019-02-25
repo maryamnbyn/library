@@ -1,11 +1,11 @@
 <?php include "adminpannel/admin_forms/classes/Db.php" ;
- include "adminpannel/admin_forms/classes/book.php";
+include "adminpannel/admin_forms/classes/book.php";
 
 
 
 
-    $books = new book();
-    $results = $books->showcategory();
+$books = new book();
+$results = $books->showcategory();
 
 
 
@@ -60,12 +60,12 @@
 
             <ul class="nav navbar-nav ">
 
-                <li ><a href="#">about us</a></li>
+                <li class="active"><a href="#">about us</a></li>
 
-                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">books Category <span class="caret"></span></a>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category books <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <?php foreach ($results as $result) { ?>
-                        <li class="dropdown"><a href="showCategoryBook.php?id=<?php echo $result['id'];?>"><?php echo $result['title'] ; ?></a></li>
+                            <li class="dropdown"><a href="showCategoryBook.php?id=<?php echo $result['id'];?>"><?php echo $result['title'] ; ?></a></li>
                         <?php }?>
                     </ul>
                 </li>
@@ -137,7 +137,6 @@
     <div class="container">
         <div class="img-about-us col-md-6">
             <img src="images/20.jpg" width="100%" height="450px" ;>
-            <!-- <div style ="background-image : url('images/4.jpg'); width :100% ; height:200px ;"> </div> -->
         </div>
         <div class="exp-about-us col-md-6">
             <h2>
@@ -176,20 +175,18 @@
 
 
             <?php $book = new book();
-            $images = $book->select();
+            $images = $book->showCategoryBook($_GET['id']);
+
             foreach ($images as $image){
             ?>
 
-            <div class="col-md-3 card-body card style="width: 18rem;">
-
-                    <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
-                        <h5 class="card-title"><?php echo $image['label'] ?></h5>
-                        <p class="card-text"><?php echo $image['description'] ?></p>
-                        <a href="#" class="btn btn-primary"> more Imformation</a>
-                    </div>
+            <div class="col-md-3 ">
+                <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
+            </div>
+        </div>
         <?php } ?>
 
-</div>
+    </div>
 </div>
 
 

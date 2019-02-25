@@ -18,6 +18,54 @@ class book extends Db
     }
 
 
+
+
+    public function showcategory()
+    {
+        $sql = "SELECT book.name ,categories.title, categories.id ,book.bookImage
+        from book 
+        INNER JOIN categories on (book.categoryID = categories.id)
+        GROUP BY categories.title  ";
+        $result = $this->connect()->query($sql);
+
+        if ($result->rowCount() > 0) {
+            while ($row = $result->fetch()) {
+                $data[] = $row;
+
+            }
+            return $data;
+        }
+    }
+
+
+
+
+
+
+
+    public function showCategoryBook($id)
+    {
+
+        {
+
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description
+from book 
+INNER JOIN categories on (book.categoryID = categories.id)
+WHERE categories.id = :id  ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+
+        }
+    }
+
+
+
+
+
+
     public function addbook($a, $b)
     {
 
@@ -63,15 +111,25 @@ class book extends Db
         }
     }
 
-    public function categoryBook()
+
+
+
+
+
+    public function categoryBook($id)
     {
-        $sql = "select * from categories";
+        $sql = "select * from categories where id=:id";
         $result = $this->connect()->query($sql);
+        $result->bindValue(':id', $id);
+
 
         return $result->fetchAll();
 
 
     }
+
+
+
 
     public function getwriters()
     {
@@ -82,6 +140,8 @@ class book extends Db
 
 
     }
+
+
 
     public function selectOne($id)
     {
@@ -94,6 +154,8 @@ class book extends Db
         return $result;
 
     }
+
+
 
     public function update($fields, $id)
     {
@@ -129,6 +191,8 @@ class book extends Db
         }
     }
 
+
+
     public function destroy($id)
     {
         $sql = "DELETE FROM book WHERE id = :id";
@@ -138,6 +202,8 @@ class book extends Db
 
     }
 }
+
+
 
 
 ?>
