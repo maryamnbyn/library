@@ -133,12 +133,10 @@ WHERE book.id = :id  ";
 
 
 
-    public function categoryBook($id)
+    public function categoryBook()
     {
-        $sql = "select * from categories where id=:id";
+        $sql = "select * from categories";
         $result = $this->connect()->query($sql);
-        $result->bindValue(':id', $id);
-
 
         return $result->fetchAll();
 
