@@ -97,27 +97,27 @@ $results = $books->showcategory();
         <div class="carousel-inner">
             <div class="item active">
 
-                <img src="images/1.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+                <img src="images/1.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
                 <div class="carousel-caption"
                 "br-border">
-                <h3>christmas shopping </h3>
-                <p>Industries completely dependent on Christmas include Christmas cards, of which 1.9 billion are </p>
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.</p>
             </div>
         </div>
         <div class="item">
 
-            <img src="images/2.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+            <img src="images/2.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
-                <h3>christmas shopping </h3>
-                <p>Industries completely dependent on Christmas include Christmas cards, of which 1.9 billion are </p>
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. </p>
             </div>
         </div>
         <div class="item">
 
             <img src="images/3.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
-                <h3>christmas shopping </h3>
-                <p>Industries completely dependent on Christmas include Christmas cards, of which 1.9 billion are </p>
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. </p>
             </div>
         </div>
     </div>
@@ -176,13 +176,15 @@ $results = $books->showcategory();
 
             <?php $book = new book();
             $images = $book->showCategoryBook($_GET['id']);
-
             foreach ($images as $image){
             ?>
 
-            <div class="col-md-3 ">
-                <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
-            </div>
+            <div class="col-md-3 card-body card style="width: 18rem;">
+
+            <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
+            <h5 class="card-title"><?php echo $image['label'] ?></h5>
+            <p class="card-text"><?php echo $image['description'] ?></p>
+            <a href="#" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
 
@@ -202,7 +204,7 @@ $results = $books->showcategory();
 <!--footer-->
 </div>
 <div class="footer navbar-inverse text-center">
-    <span>copyrighy @christmas_shopping 2018</span>
+    <span>copyrighy @Iraniyan Library 2018</span>
 </div>
 </div>
 </body>

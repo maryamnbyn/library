@@ -97,7 +97,7 @@
         <div class="carousel-inner">
             <div class="item active">
 
-                <img src="images/1.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+                <img src="images/1.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
                 <div class="carousel-caption"
                 "br-border">
                 <h3>christmas shopping </h3>
@@ -106,7 +106,7 @@
         </div>
         <div class="item">
 
-            <img src="images/2.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+            <img src="images/2.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
                 <h3>christmas shopping </h3>
                 <p>Industries completely dependent on Christmas include Christmas cards, of which 1.9 billion are </p>
@@ -114,7 +114,7 @@
         </div>
         <div class="item">
 
-            <img src="images/3.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+            <img src="images/3.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
                 <h3>christmas shopping </h3>
                 <p>Industries completely dependent on Christmas include Christmas cards, of which 1.9 billion are </p>
@@ -185,7 +185,7 @@
                     <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
                         <h5 class="card-title"><?php echo $image['label'] ?></h5>
                         <p class="card-text"><?php echo $image['description'] ?></p>
-                        <a href="#" class="btn btn-primary"> more Imformation</a>
+                        <a href="ShowInformation.php?id=<?php echo $image['id'];?>" class="btn btn-primary"> more Imformation</a>
                     </div>
         <?php } ?>
 
@@ -205,7 +205,7 @@
 <!--footer-->
 </div>
 <div class="footer navbar-inverse text-center">
-    <span>copyrighy @christmas_shopping 2018</span>
+    <span>copyrighy @Iraniyan Library 2018</span>
 </div>
 </div>
 </body>

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3143b0af-d34a-4f6b-82da-6272c5dfcdbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showCategoryBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/showCategoryBook.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,20 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="187" column="65" selection-start-line="187" selection-start-column="65" selection-end-line="187" selection-end-column="65" />
+            <state relative-caret-position="2923">
+              <caret line="177" selection-start-line="177" selection-end-line="180" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/showCategoryBook.php">
+        <entry file="file://$PROJECT_DIR$/ShowInformation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1028">
-              <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+            <state relative-caret-position="289">
+              <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="37" />
+            <state relative-caret-position="-118">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="50" column="113" selection-start-line="50" selection-start-column="113" selection-end-line="50" selection-end-column="113" />
+              <caret line="50" column="141" selection-start-line="50" selection-start-column="141" selection-end-line="50" selection-end-column="141" />
             </state>
           </provider>
         </entry>
@@ -72,7 +72,16 @@
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1540">
-              <caret line="82" column="68" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="68" />
+              <caret line="82" column="68" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/showCategoryBook.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="179" column="14" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="179" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -81,8 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>book</find>
-      <find>po</find>
       <find>heade</find>
       <find>add</find>
       <find>all</find>
@@ -111,6 +118,8 @@
       <find>showb</find>
       <find>del</find>
       <find>abou</find>
+      <find>chrismas</find>
+      <find>chri</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,19 +173,22 @@
         <option value="$PROJECT_DIR$/adminpannel/showTrustBook.php" />
         <option value="$PROJECT_DIR$/adminpannel/showCategoryBook.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/css/style.css" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" />
         <option value="$PROJECT_DIR$/showCategoryBook.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/ShowInformation.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="915" />
     <option name="y" value="550" />
     <option name="width" value="990" />
     <option name="height" value="975" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -188,24 +200,6 @@
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
-              <item name="admin_forms" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -266,18 +260,18 @@
       <workItem from="1550901457488" duration="22041000" />
       <workItem from="1550995707620" duration="15735000" />
       <workItem from="1551015915162" duration="5216000" />
-      <workItem from="1551074355372" duration="18655000" />
+      <workItem from="1551074355372" duration="21767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175459000" />
+    <option name="totallyTimeSpent" value="178571000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20872483" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20872483" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -302,7 +296,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/adminpannel/register.php" />
     <entry file="file://$PROJECT_DIR$/adminpannel/login.php" />
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/connection.php" />
     <entry file="file://$PROJECT_DIR$/admin/admin.php">
@@ -535,14 +528,7 @@
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addbooks.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1540">
-          <caret line="82" column="68" lean-forward="true" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="37" />
+          <caret line="82" column="68" selection-start-line="82" selection-start-column="40" selection-end-line="82" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -560,24 +546,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php">
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="50" column="113" selection-start-line="50" selection-start-column="113" selection-end-line="50" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/showCategoryBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1028">
-          <caret line="191" lean-forward="true" selection-start-line="191" selection-end-line="191" />
+        <state relative-caret-position="-118">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="187" column="65" selection-start-line="187" selection-start-column="65" selection-end-line="187" selection-end-column="65" />
+        <state relative-caret-position="2923">
+          <caret line="177" selection-start-line="177" selection-end-line="180" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showCategoryBook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="179" column="14" lean-forward="true" selection-start-line="176" selection-start-column="12" selection-end-line="179" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShowInformation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="50" column="141" selection-start-line="50" selection-start-column="141" selection-end-line="50" selection-end-column="141" />
         </state>
       </provider>
     </entry>

@@ -48,10 +48,27 @@ class book extends Db
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description
 from book 
 INNER JOIN categories on (book.categoryID = categories.id)
 WHERE categories.id = :id  ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+
+        }
+    }
+    public function showOneBook($id)
+    {
+
+        {
+
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description
+from book 
+INNER JOIN categories on (book.categoryID = categories.id)
+WHERE book.id = :id  ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindValue(":id", $id);
             $stmt->execute();
