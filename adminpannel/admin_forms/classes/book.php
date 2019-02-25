@@ -48,7 +48,7 @@ class book extends Db
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description, book.id as bookID
 from book 
 INNER JOIN categories on (book.categoryID = categories.id)
 WHERE categories.id = :id  ";

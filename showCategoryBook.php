@@ -184,7 +184,7 @@ $results = $books->showcategory();
             <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
             <h5 class="card-title"><?php echo $image['label'] ?></h5>
             <p class="card-text"><?php echo $image['description'] ?></p>
-            <a href="#" class="btn btn-primary"> more Imformation</a>
+            <a href="ShowInformation.php?id=<?php echo $image['bookID'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
 
