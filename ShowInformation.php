@@ -102,10 +102,12 @@ $results = $books->showcategory();
         <div class="exp-about-us col-md-6">
             <h2>
                 <mark><?php echo $image['booktitle']?></mark>
-                <small> <?php echo $image['title']?></small>
             </h2>
+            <h4>
+                <?php echo"Writer Name : ".$image['WriterName']?>
+            </h4>
+
             <p>
-                <?php echo $image['booktitle']?>
             <blockquote>
                 <?php echo $image['description']?>            </blockquote>
             </p>

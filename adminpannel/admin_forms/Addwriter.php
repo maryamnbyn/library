@@ -43,6 +43,8 @@
         <div class="card-body">
             <form method="post" action="">
                 <div class="form-group">
+                    <label for="Name">Writer Name:</label>
+
                     <div class="form-label-group">
                         <input type="text" name="name" class="form-control" placeholder="name" required="required" autofocus="autofocus">
                         <label for="inputEmail">name</label>

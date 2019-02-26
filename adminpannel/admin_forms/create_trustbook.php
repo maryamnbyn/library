@@ -68,9 +68,11 @@ if (isset($_POST['submit']))
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
+                            <label for="Name">User Name:</label>
+
                             <div class="form-label-group">
+
                                 <select type="text" name="name" class="form-control"  required="required" autofocus="autofocus">
-                                    <label for="Name">name</label>
                                     <?php
                                     foreach ($books as $book){
                                         ?>
@@ -81,9 +83,10 @@ if (isset($_POST['submit']))
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <label for="userID">Book Name:</label>
+
                             <div class="form-label-group">
                                 <select type="text" name="userID" class="form-control" placeholder="userID" required="required">
-                                    <label for="userID">userID</label>
                                     <?php
                                     foreach ($users as $user){
                                         ?>
@@ -110,9 +113,11 @@ if (isset($_POST['submit']))
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <label for="text">writer Name</label>
                     <div class="form-label-group">
+
                         <select type="text" name="writerID" class="form-control" placeholder="userID" required="required">
-                            <label for="text">writerID</label>
+
                             <?php
                             foreach ($writers as $writer){
                                 ?>

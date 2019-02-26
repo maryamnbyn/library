@@ -36,7 +36,21 @@ class user extends Db
 
 
         $stmt->execute();
-
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("Add User Successful");
+                window.location.href = ('userList.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('index.php');
+            </script>
+            <?php
+        }
 
     }
 

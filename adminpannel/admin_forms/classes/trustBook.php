@@ -68,9 +68,20 @@ WHERE book.id = trustbook.bookID
         }
 
 
-        $stmtExec = $stmt->execute();
-        if ($stmtExec) {
-            header('Location: listTrustBook.php');
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("Trust Book added!");
+                window.location.href = ('listTrustBook.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('index.php');
+            </script>
+            <?php
         }
     }
 

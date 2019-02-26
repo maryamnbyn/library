@@ -34,6 +34,7 @@ if (isset($_GET['del'])) {
                 <th scope="col">Date Of print</th>
                 <th scope="col">Title</th>
                 <th scope="col">num of print</th>
+                <th scope="col">description</th>
                 <th scope="col">book Image</th>
                 <th scope="col">Action</th>
             </tr>
@@ -50,6 +51,7 @@ if (isset($_GET['del'])) {
                     <td><?php echo $row['date_of_print']; ?></td>
                     <td><?php echo $row['title']; ?></td>
                     <td><?php echo $row['num_of_print']; ?></td>
+                    <td><?php echo $row['description']; ?></td>
                     <td><?php echo $row['bookImage']; ?></td>
 
                     <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp

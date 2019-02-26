@@ -31,7 +31,22 @@ class writer extends Db
         $stmt->bindparam(':city', $a['city']);
 
 
-        $stmt->execute();
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("new witer Added");
+                window.location.href = ('writerList.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('index.php');
+            </script>
+            <?php
+        }
+
 
 
     }

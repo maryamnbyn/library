@@ -64,7 +64,7 @@ $status=0;
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.title as booktitle,book.description, book.id as bookID
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.description,book.title as booktitle,book.description, book.id as bookID
 from book 
 INNER JOIN categories on (book.categoryID = categories.id)
 WHERE categories.id = :id  ";
@@ -82,10 +82,12 @@ WHERE categories.id = :id  ";
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.title as booktitle,book.description,book.description
-from book 
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.title as booktitle,book.description,book.description,writer.name as WriterName
+from book
 INNER JOIN categories on (book.categoryID = categories.id)
-WHERE book.id = :id  ";
+RIGHT JOIN writer on(book.writerID=writer.id)
+WHERE book.id = :id
+ ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindValue(":id", $id);
             $stmt->execute();
@@ -109,9 +111,9 @@ WHERE book.id = :id  ";
         $picBook = rand(1000, 1000000) . "." . $imgExt;
         move_uploaded_file($tmp_dir, $upload_dir . $picBook);
 
-        $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`bookImage`)
+        $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`bookImage`,`description`)
  VALUES 
- (:name ,:writerID ,:date_of_print,:title,:num_of_print,:categoryID,:bookImage)
+ (:name ,:writerID ,:date_of_print,:title,:num_of_print,:categoryID,:bookImage,:description)
 ";
         $stmt = $this->connect()->prepare($sql);
 
@@ -121,6 +123,7 @@ WHERE book.id = :id  ";
         $stmt->bindparam(':title', $a['title']);
         $stmt->bindparam(':num_of_print', $a['num']);
         $stmt->bindparam(':categoryID', $a['categoryID']);
+        $stmt->bindparam(':description', $a['description']);
         $stmt->bindparam(':bookImage', $picBook);
 
 
@@ -140,6 +143,7 @@ WHERE book.id = :id  ";
             <?php
         }
     }
+
 
 
     public function categoryBook()

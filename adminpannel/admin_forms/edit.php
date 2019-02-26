@@ -30,6 +30,8 @@ if (isset($_POST['submit'])){
     $book = new book();
     $book->update($fields,$id);
 }
+$book = new book();
+$writers = $book->getwriters();
 ?>
 <html>
 <head>
@@ -55,7 +57,7 @@ if (isset($_POST['submit'])){
             <h4 class="mb-12">Edit book</h4>
 
 
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $result['id'];?>">
                 <div class="form-group">
                     <label for="name">Name: </label>
@@ -71,6 +73,45 @@ if (isset($_POST['submit'])){
                     <label for="date_of_print">Title</label>
                     <input type="text" name ="titlee" class="form-control"  placeholder="title" value="<?php echo $result['title']?>">
                 </div>
+
+
+                <div class="form-group">
+                    <label for="Writer Name">Writer Name</label>
+
+                    <div class="form-label-group">
+                        <select type="text" name="writerID" class="form-control" placeholder="witerID"
+                        >
+                            <?php
+                            foreach ($writers as $writer) {
+                                ?>
+                                <option value="<?= $writer['id'] ?>"><?= $writer['name'] ?></option>
+
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="categoryID">categoryID</label>
+
+                    <div class="form-label-group">
+                        <select type="text" name="categoryID" class="form-control" placeholder="categoryID"
+                                r>
+                            <?php
+                            foreach ($categoryBooks as $categoryBook) {
+                                ?>
+                                <option value="<?= $categoryBook['id'] ?>"><?= $categoryBook['title'] ?></option>
+
+                            <?php } ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date_of_print">Pic Of Book</label>
+                    <input type="file" name ="picbook" class="form-control"  placeholder="picbook" value="<?php echo $result['picbook']?>">
+                </div>
+
+
+
                 <div class="form-group">
                     <label for="Num_of_print">num_of_print</label>
                     <input type="text" name ="num" class="form-control"  placeholder="Num_of_print" value="<?php echo $result['num_of_print']?>">
