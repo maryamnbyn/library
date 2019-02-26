@@ -19,6 +19,7 @@ WHERE book.id = trustbook.bookID
         }
     }
 
+
     public function getBooks()
     {
         $sql = "select * from book";

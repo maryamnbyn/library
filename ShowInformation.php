@@ -101,11 +101,11 @@ $results = $books->showcategory();
         </div>
         <div class="exp-about-us col-md-6">
             <h2>
-                <mark><?php echo $image['label']?></mark>
+                <mark><?php echo $image['booktitle']?></mark>
                 <small> <?php echo $image['title']?></small>
             </h2>
             <p>
-                <?php echo $image['label']?>
+                <?php echo $image['booktitle']?>
             <blockquote>
                 <?php echo $image['description']?>            </blockquote>
             </p>

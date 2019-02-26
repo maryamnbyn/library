@@ -6,7 +6,7 @@ include "adminpannel/admin_forms/classes/book.php";
 
 $books = new book();
 $results = $books->showcategory();
-
+$book = new book();
 
 
 ?>
@@ -74,7 +74,7 @@ $results = $books->showcategory();
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a href="adminpannel/admin_forms/login.php"><span class="glyphicon glyphicon-user"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
 
@@ -182,8 +182,12 @@ $results = $books->showcategory();
             <div class="col-md-3 card-body card style="width: 18rem;">
 
             <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
-            <h5 class="card-title"><?php echo $image['label'] ?></h5>
-            <p class="card-text"><?php echo $image['description'] ?></p>
+            <h5 class="card-title  "><?php echo "Name Of Book: ".$image['name'] ?></h5>
+            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($image['name'])?></h5>
+            <h5 class="card-title"><?php echo "Title Of Book: ".$image['title'] ?></h5>
+
+
+            <p class="card-text"><?php echo "Description Of Book: </br>".$image['description'] ?></p>
             <a href="ShowInformation.php?id=<?php echo $image['bookID'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>

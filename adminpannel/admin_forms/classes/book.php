@@ -17,7 +17,28 @@ class book extends Db
         }
     }
 
+    public function bookCondition($name)
+    {
+        $sql = "select trustbook.lend_of_book,trustbook.to_take_back,book.name
+from trustbook,book
+where(book.id = trustbook.bookID AND lend_of_book<now() AND NOW()<to_take_back)
+";
+        $result = $this->connect()->query($sql);
+        $Lists = $result->fetchAll();
 
+$status=0;
+        foreach ($Lists as $list){
+
+
+            if($list['name'] == $name){
+                echo  "Condition: ".$name." is not entity";
+                $status = 1;
+            }
+        }
+        if($status == 0) {
+            echo "Condition : You Can trust"." " . $name;
+        }
+    }
 
 
     public function showcategory()
@@ -38,17 +59,12 @@ class book extends Db
     }
 
 
-
-
-
-
-
     public function showCategoryBook($id)
     {
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description, book.id as bookID
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.title as booktitle,book.description, book.id as bookID
 from book 
 INNER JOIN categories on (book.categoryID = categories.id)
 WHERE categories.id = :id  ";
@@ -60,12 +76,13 @@ WHERE categories.id = :id  ";
 
         }
     }
+
     public function showOneBook($id)
     {
 
         {
 
-            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.label,book.description,book.label,book.description
+            $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.title as booktitle,book.description,book.description
 from book 
 INNER JOIN categories on (book.categoryID = categories.id)
 WHERE book.id = :id  ";
@@ -77,10 +94,6 @@ WHERE book.id = :id  ";
 
         }
     }
-
-
-
-
 
 
     public function addbook($a, $b)
@@ -129,10 +142,6 @@ WHERE book.id = :id  ";
     }
 
 
-
-
-
-
     public function categoryBook()
     {
         $sql = "select * from categories";
@@ -142,8 +151,6 @@ WHERE book.id = :id  ";
 
 
     }
-
-
 
 
     public function getwriters()
@@ -157,7 +164,6 @@ WHERE book.id = :id  ";
     }
 
 
-
     public function selectOne($id)
     {
 
@@ -169,7 +175,6 @@ WHERE book.id = :id  ";
         return $result;
 
     }
-
 
 
     public function update($fields, $id)
@@ -207,7 +212,6 @@ WHERE book.id = :id  ";
     }
 
 
-
     public function destroy($id)
     {
         $sql = "DELETE FROM book WHERE id = :id";
@@ -217,8 +221,6 @@ WHERE book.id = :id  ";
 
     }
 }
-
-
 
 
 ?>
