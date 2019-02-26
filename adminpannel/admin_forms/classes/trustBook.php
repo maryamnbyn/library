@@ -6,8 +6,12 @@ class trustbook extends Db
     //select all data from the data base
     public function select()
     {
-        $sql = "select book.id ,book.name ,users.family , trustbook.lend_of_book , trustbook.to_take_back from book,trustbook,users
-WHERE book.id = trustbook.bookID
+        $sql = "select trustbook.id,trustbook.lend_of_book,trustbook.to_take_back ,book.name , writer.name as writerName,users.name as UserName
+from trustbook
+LEFT JOIN  writer on(writer.id = trustbook.writerID)
+LEFT JOIN book on(book.id = trustbook.bookID)
+LEFT JOIN  users on(users.id = trustbook.userID)
+
 ";
         $result = $this->connect()->query($sql);
         if ($result->rowCount() > 0) {

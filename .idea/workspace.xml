@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3143b0af-d34a-4f6b-82da-6272c5dfcdbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShowInformation.php" beforeDir="false" afterPath="$PROJECT_DIR$/ShowInformation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/admin_thems/sidebar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/writerList.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/writerList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/blank.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/books.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/books.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/charts.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/charts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/tables.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/users.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/writer.html" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/writer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,65 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="70" column="47" lean-forward="true" selection-start-line="70" selection-end-line="71" />
+            <state relative-caret-position="228">
+              <caret line="19" column="30" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php">
+        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/writerList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="90" column="7" lean-forward="true" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ShowInformation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/Db.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="638">
+              <caret line="56" column="74" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -99,26 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="71" selection-start-line="71" selection-end-line="89" selection-end-column="7" />
+            <state relative-caret-position="176">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -155,8 +73,8 @@
       <find>sea</find>
       <find>login.php</find>
       <find>dash</find>
-      <find>cs</find>
       <find>script</find>
+      <find>cs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +105,6 @@
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/edit_userList.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/login.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/userList.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/upload.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/css/admin.css" />
@@ -209,13 +126,14 @@
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/index.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/edit.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/Addwriter.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/writerList.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php" />
         <option value="$PROJECT_DIR$/ShowInformation.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php" />
       </list>
     </option>
   </component>
@@ -239,6 +157,17 @@
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_forms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -299,12 +228,12 @@
       <workItem from="1550901457488" duration="22041000" />
       <workItem from="1550995707620" duration="15735000" />
       <workItem from="1551015915162" duration="5216000" />
-      <workItem from="1551074355372" duration="49204000" />
+      <workItem from="1551074355372" duration="52032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206008000" />
+    <option name="totallyTimeSpent" value="208836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -488,13 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/showCategoryBook.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3366">
@@ -569,13 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="70" column="47" lean-forward="true" selection-start-line="70" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -587,20 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/Db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -627,15 +528,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/book.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="90" column="7" lean-forward="true" selection-start-line="90" selection-start-column="7" selection-end-line="90" selection-end-column="7" />
+        <state relative-caret-position="-1907">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShowInformation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="1078">
           <caret line="106" column="43" selection-start-line="106" selection-start-column="43" selection-end-line="106" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/trustBook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="56" column="74" selection-start-line="56" selection-start-column="74" selection-end-line="56" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/create_trustbook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="19" column="30" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>

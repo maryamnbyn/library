@@ -17,7 +17,7 @@ if (isset($_POST['submit']))
         [
         'bookID'      => $name,
         'userID'      => $userID,
-        'lend_of_book'=> $datee,
+        'lend_of_book'=> $date,
         'to_take_back'=> $datee,
         'writerID'    => $writerID,
         ];
@@ -96,7 +96,21 @@ if (isset($_POST['submit']))
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <label for="text">writer Name</label>
+                            <div class="form-label-group">
 
+                                <select type="text" name="writerID" class="form-control" placeholder="userID" required="required">
+
+                                    <?php
+                                    foreach ($writers as $writer){
+                                        ?>
+                                        <option value="<?= $writer['id'] ?>" ><?= $writer['name'] ?></option>
+
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -112,21 +126,7 @@ if (isset($_POST['submit']))
                         <label for="to_take_back">To Take Back</label>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="text">writer Name</label>
-                    <div class="form-label-group">
 
-                        <select type="text" name="writerID" class="form-control" placeholder="userID" required="required">
-
-                            <?php
-                            foreach ($writers as $writer){
-                                ?>
-                                <option value="<?= $writer['id'] ?>" ><?= $writer['name'] ?></option>
-
-                            <?php } ?>
-                        </select>
-                    </div>
-                </div>
 
                 <div class="form-group">
                     <div class="form-row">

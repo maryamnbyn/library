@@ -47,7 +47,7 @@ if (isset($_GET['del'])) {
                 <tr>
                     <th scope="row"><?php echo $row['id']; ?></th>
                     <td><?php echo $row['name']; ?></td>
-                    <td><?php echo $row['family']; ?></td>
+                    <td><?php echo $row['UserName']; ?></td>
                     <td><?php echo $row['lend_of_book']; ?></td>
                     <td><?php echo $row['to_take_back']; ?></td>
 
