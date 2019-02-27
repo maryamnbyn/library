@@ -1,4 +1,5 @@
 <?php
+session_start();
 function __autoload($class)
 {
     require_once "classes/$class.php";
@@ -112,11 +113,12 @@ if (isset($_POST['submit'])) {
                     <input type="submit" name = "submit" class="btn btn-primary"></input>
 
             </form>
-
+            <div class="text-center">
+                <a class="d-block small mt-3" href="login.php">Login Page</a>
+            </div>
         </div>
     </div>
 </div>
-
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

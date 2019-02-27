@@ -1,6 +1,7 @@
 <?php
 
 require_once(__DIR__ . '/Db.php');
+session_start();
 
 class user extends Db
 {
@@ -28,7 +29,7 @@ class user extends Db
         $stmt->bindparam(':name', $a['name']);
         $stmt->bindparam(':family', $a['lastName']);
         $stmt->bindparam(':email', $a['email']);
-        $stmt->bindparam(':password', $a['password']);
+        $stmt->bindparam(':password', md5($a['password']));
         $stmt->bindparam(':city', $a['city']);
         $stmt->bindparam(':birthday', $a['birthday']);
         $stmt->bindparam(':postcode', $a['postcode']);
@@ -36,11 +37,14 @@ class user extends Db
 
 
         $stmt->execute();
-        if ($stmt->execute()) {
+        if ($stmt->execute())
+        {
+            $_SESSION['username'] = $a['name'];
+            $_SESSION['success'] = "You are now logged in";
             ?>
             <script>
                 alert("Add User Successful");
-                window.location.href = ('userList.php');
+                window.location.href = ('../../index1.php');
             </script>
             <?php
         } else {
@@ -95,41 +99,49 @@ class user extends Db
         $stmt = $this->connection->prepare($sql);
 
         $stmt->execute([
-            ":id"           => $user['id'],
-            ":fname"         => $user['name'],
-            ":lastName"     => $user['lastName'],
-            ":birthday"     => $user['birthday'],
-            ":postcode"     => $user['postcode'],
-            ":discipline"   => $user['discipline'],
-            ":city"         => $user['city'],
-            ":email"        => $user['email'],
-            ":password"     => $user['password']
+            ":id" => $user['id'],
+            ":fname" => $user['name'],
+            ":lastName" => $user['lastName'],
+            ":birthday" => $user['birthday'],
+            ":postcode" => $user['postcode'],
+            ":discipline" => $user['discipline'],
+            ":city" => $user['city'],
+            ":email" => $user['email'],
+            ":password" => $user['password']
         ]);
     }
 
 
     public function userLogin($email, $pass)
     {
-        if (!empty($email) && !empty($pass))
-        {
+        if (!empty($email) && !empty($pass)) {
             $st = $this->connection->prepare("select * from users where email =:email and password=:password");
             $st->bindParam(':email', $email);
 
             $st->bindParam(':password', $pass);
             $st->execute();
             if ($st->rowCount() == 1) {
-                header('Location: http://localhost/project/adminpannel/');
+                $_SESSION['username'] = $email;
+                $_SESSION['success'] = "You are now logged in";
+                ?>
+                <script>
+                    alert("User IS Login");
+                    window.location.href = ('../../index1.php');
+                </script>
+                <?php
+            } else {
+                ?>
+                <script>
+                    alert("Error");
+                    window.location.href = ('../../index.php');
+                </script>
+                <?php
             }
-            else
-                echo "incorrect username or password";
+
         }
-        else
-            {
-            echo "please enter username and password";
-        }
+
 
     }
-
 }
 
 
