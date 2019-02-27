@@ -8,32 +8,12 @@ if(isset($_GET['id'])){
     $trustbook = new trustbook();
     $result =  $trustbook->selectOne($uid);
 
-
-
 }
 
 
-
-
-
-if (isset($_POST['submit'])){
-
-
-    $bookID = $_POST['bookID'];
-    $date = $_POST['date'];
-    $datee = $_POST['datee'];
-
-
-
-    $fields = [
-        'bookID'=>$bookID,
-        'lend_of_book'=>$date,
-        'to_take_back'=>$datee,
-
-    ];
-    $id =$_POST['id'];
-    $trustbook = new trustbook();
-    $trustbook->update($fields,$id);
+if (isset($_POST['submit'])) {
+    $book = new trustbook();
+    $book->update($_POST);
 
 
 }
@@ -41,6 +21,8 @@ $trustbook = new trustbook();
 $books = $trustbook->getBooks();
 $trustbook = new trustbook();
 $users = $trustbook->getusers();
+$book = new writer();
+$writers = $book->getwriters();
 ?>
 <html>
 <head>
@@ -73,10 +55,21 @@ $users = $trustbook->getusers();
 
                         <?php } ?>
                     </select>
+                    <div class="form-group">
+                        <label for="name">Writer Name </label>
+                        <select type="text" class="form-control"   name = "writerName" aria-describedby="writerName"
+                                placeholder="writer Name" >
+                            <?php
+                            foreach ($writers as $writer){
+                                ?>
 
+                                <option value="<?= $writer['id'] ?>" ><?= $writer['name'] ?></option>
+
+                            <?php } ?>
+                        </select>
                     <label for="name">User Name: </label>
                     <select type="text" class="form-control"   name = "UserName" aria-describedby="emailHelp"
-                            placeholder="Enter Name" value="">
+                            placeholder="Enter Name" >
                         <?php
                         foreach ($users as $user){
                             ?>

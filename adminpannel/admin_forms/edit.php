@@ -3,35 +3,24 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if(isset($_GET['id'])){
+
+if (isset($_GET['id'])) {
     $uid = $_GET['id'];
     $book = new book();
-    $result =  $book->selectOne($uid);
+    $result = $book->selectOne($uid);
 }
 
 
-
-
-if (isset($_POST['submit'])){
-
-
-    $name = $_POST['name'];
-    $date = $_POST['date'];
-    $title = $_POST['titlee'];
-    $num = $_POST['num'];
-
-    $fields = [
-        'name'=>$name,
-        'date_of_print'=>$date,
-        'title'=>$title,
-        'num_of_print'=>$num,
-    ];
-    $id =$_POST['id'];
+if (isset($_POST['submit'])) {
     $book = new book();
-    $book->update($fields,$id);
+    $book->update($_POST, $_FILES);
+
+
 }
-$book = new book();
+$book = new writer();
 $writers = $book->getwriters();
+$category = new category();
+$categoryBooks = $category->getcategory();
 ?>
 <html>
 <head>
@@ -44,8 +33,8 @@ $writers = $book->getwriters();
 
 <!--navbar-->
 
-<?php include "admin_thems/navbar.php"?>
-<?php include "admin_thems/sidebar.php"?>
+<?php include "admin_thems/navbar.php" ?>
+<?php include "admin_thems/sidebar.php" ?>
 
 <!--create table-->
 <div class="container mt-4">
@@ -58,20 +47,27 @@ $writers = $book->getwriters();
 
 
             <form action="" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="id" value="<?php echo $result['id'];?>">
+                <input type="hidden" name="id" value="<?php echo $result['id']; ?>">
                 <div class="form-group">
                     <label for="name">Name: </label>
-                    <input type="text" class="form-control"   name = "name" aria-describedby="emailHelp"
-                           placeholder="Enter Name" value="<?php echo $result['name'];?>">
+                    <input type="text" class="form-control" name="name" aria-describedby="emailHelp"
+                           placeholder="Enter Name" value="<?php echo $result['name']; ?>">
 
                 </div>
                 <div class="form-group">
                     <label for="date_of_print">Date Of Print</label>
-                    <input type="date" name = "date" class="form-control"  placeholder="Date_Of_Print" value="<?php echo $result['date_of_print']?>">
+                    <input type="date" name="date" class="form-control" placeholder="Date_Of_Print"
+                           value="<?php echo $result['date_of_print'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="date_of_print">Title</label>
-                    <input type="text" name ="titlee" class="form-control"  placeholder="title" value="<?php echo $result['title']?>">
+                    <input type="text" name="title" class="form-control" placeholder="title"
+                           value="<?php echo $result['title'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="description">description</label>
+                    <input type="text" name="description" class="form-control" placeholder="title"
+                           value="<?php echo $result['description'] ?>">
                 </div>
 
 
@@ -84,7 +80,7 @@ $writers = $book->getwriters();
                             <?php
                             foreach ($writers as $writer) {
                                 ?>
-                                <option value="<?= $writer['id'] ?>"><?= $writer['name'] ?></option>
+                                <option value="<?= $writer['id'] ?>"><?php echo $writer['name'] ?></option>
 
                             <?php } ?>
                         </select>
@@ -97,9 +93,10 @@ $writers = $book->getwriters();
                         <select type="text" name="categoryID" class="form-control" placeholder="categoryID"
                                 r>
                             <?php
+
                             foreach ($categoryBooks as $categoryBook) {
                                 ?>
-                                <option value="<?= $categoryBook['id'] ?>"><?= $categoryBook['title'] ?></option>
+                                <option value="<?= $categoryBook['id'] ?>"><?php echo $categoryBook['title'] ?></option>
 
                             <?php } ?>
                         </select>
@@ -107,17 +104,18 @@ $writers = $book->getwriters();
                 </div>
                 <div class="form-group">
                     <label for="date_of_print">Pic Of Book</label>
-                    <input type="file" name ="picbook" class="form-control"  placeholder="picbook" value="<?php echo $result['picbook']?>">
+                    <input type="file" name="picbook" class="form-control" placeholder="picbook"
+                           value="<?php echo $result['picbook'] ?>">
                 </div>
-
 
 
                 <div class="form-group">
                     <label for="Num_of_print">num_of_print</label>
-                    <input type="text" name ="num" class="form-control"  placeholder="Num_of_print" value="<?php echo $result['num_of_print']?>">
+                    <input type="text" name="num" class="form-control" placeholder="Num_of_print"
+                           value="<?php echo $result['num_of_print'] ?>">
                 </div>
 
-                <input type="submit" name = "submit" class="btn btn-primary">Add Book</input>
+                <input type="submit" name="submit" class="btn btn-primary">Add Book</input>
 
             </form>
 

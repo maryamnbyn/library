@@ -2,9 +2,13 @@
 .imgm
 {
 
-    width: 300px;
+    width: 200px;
     height: 300px;
-    padding: 50px;
+
+}
+.cardmargin{
+    margin:30px;
+
 }
 nav.vn-navbar{
     border-radius : 0 ;

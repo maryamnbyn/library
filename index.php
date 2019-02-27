@@ -34,8 +34,9 @@ $book = new book();
             foreach ($images as $image){
             ?>
 
-            <div class="col-md-3  card-body card style=" width: 18rem;
-            ">
+            <div class="col-md-3  card-body cardmargin card style=" width: 18rem;">
+
+
 
             <img class="imgm text-left" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage']; ?>"
             <h5 class="card-title  "><?php echo "Name Of Book: ".$image['name'] ?></h5>

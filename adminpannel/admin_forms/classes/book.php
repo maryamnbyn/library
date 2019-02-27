@@ -108,7 +108,7 @@ WHERE book.id = :id
         $upload_dir = 'uploads/';
         $imgExt = strtolower(pathinfo($images, PATHINFO_EXTENSION));
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
-        $picBook = rand(1000, 1000000) . "." . $imgExt;
+        $picBook = rand(1000, 1000000).".".$imgExt;
         move_uploaded_file($tmp_dir, $upload_dir . $picBook);
 
         $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`bookImage`,`description`)
@@ -181,41 +181,49 @@ WHERE book.id = :id
     }
 
 
-    public function update($fields, $id)
+    public function update($a,$b)
     {
-        $st = "";
-        $counter = 1;
-        $total_fields = count($fields);
-        foreach ($fields as $key => $value) {
-            if ($counter === $total_fields) {
-                $set = "$key = :" . $key;
-                $st = $st . $set;
+        $images = $b['picbook']['name'];
+        $tmp_dir = $b['picbook']['tmp_name'];
+        $imagesize = $b['picbook']['size'];
 
+        $upload_dir = 'uploads/';
+        $imgExt = strtolower(pathinfo($images, PATHINFO_EXTENSION));
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
+        $picBook = rand(1000, 1000000).".".$imgExt;
+        move_uploaded_file($tmp_dir, $upload_dir . $picBook);
 
-            } else {
-                $set = "$key = :" . $key . ", ";
-                $st = $st . $set;
-                $counter++;
-
-            }
-
-        }
-        $sql = " ";
-
-        $sql .= "UPDATE book SET " . $st;
-        $sql .= " WHERE id = " . $id;
+        $sql ="UPDATE `book` SET 
+`writerID`=:writerID,`name`=:name,`date_of_print`=:date_of_print,`title`=:title,`num_of_print`=:num_of_print,`categoryID`=:categoryID,`bookImage`=:bookImage,`description`=:description WHERE `id`=:id";
         $stmt = $this->connect()->prepare($sql);
-        foreach ($fields as $key => $value) {
-            $stmt->bindValue(':' . $key, $value);
-        }
-        $stmtExec = $stmt->execute();
-        if ($stmtExec) {
 
-            header('Location: index.php');
+        $stmt->bindparam(':id', $a['id']);
+
+        $stmt->bindparam(':writerID', $a['writerID']);
+        $stmt->bindparam(':name', $a['name']);
+        $stmt->bindparam(':date_of_print', $a['date']);
+        $stmt->bindparam(':title', $a['title']);
+        $stmt->bindparam(':num_of_print', $a['num']);
+        $stmt->bindparam(':categoryID', $a['categoryID']);
+        $stmt->bindparam(':bookImage', $picBook);
+        $stmt->bindparam(':description', $a['description']);
+
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("record Edited");
+                window.location.href = ('index.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('index.php');
+            </script>
+            <?php
         }
     }
-
-
     public function destroy($id)
     {
         $sql = "DELETE FROM book WHERE id = :id";

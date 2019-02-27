@@ -50,6 +50,15 @@ class writer extends Db
 
 
     }
+    public function getwriters()
+    {
+        $sql = "select * from writer";
+        $result = $this->connect()->query($sql);
+
+        return $result->fetchAll();
+
+
+    }
 
     public function selectWriter()
     {
@@ -93,21 +102,28 @@ class writer extends Db
 
         $stmt->execute(
             [
-            ":id"           => $writer['id'],
-            ":fname"        => $writer['name'],
-            ":birthday"     => $writer['birthday'],
-            ":city"         => $writer['city'],
-        ]);
-    }
+                ":id" => $writer['id'],
+                ":fname" => $writer['name'],
+                ":birthday" => $writer['birthday'],
+                ":city" => $writer['city'],
+            ]);
 
-
-
-
-}
-
-
-
-
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("record Edited");
+                window.location.href = ('writerList.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('writerList.php');
+            </script>
+            <?php
+        }
+    }}
 
 
 

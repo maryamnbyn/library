@@ -33,6 +33,7 @@ if (isset($_GET['del'])) {
                 <th scope="col">#</th>
                 <th scope="col">Book Name</th>
                 <th scope="col">User Name</th>
+                <th scope="col">Writer Name</th>
                 <th scope="col">lend Of Book</th>
                 <th scope="col">To Take Back</th>
 
@@ -48,6 +49,7 @@ if (isset($_GET['del'])) {
                     <th scope="row"><?php echo $row['id']; ?></th>
                     <td><?php echo $row['name']; ?></td>
                     <td><?php echo $row['UserName']; ?></td>
+                    <td><?php echo $row['writerName']; ?></td>
                     <td><?php echo $row['lend_of_book']; ?></td>
                     <td><?php echo $row['to_take_back']; ?></td>
 

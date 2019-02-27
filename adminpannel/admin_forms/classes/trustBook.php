@@ -101,39 +101,34 @@ LEFT JOIN  users on(users.id = trustbook.userID)
 
     }
 
-    public function update($fields, $id)
-    {
-        $st = "";
-        $counter = 1;
-        $total_fields = count($fields);
-        foreach ($fields as $key => $value) {
-            if ($counter === $total_fields) {
-                $set = "$key = :" . $key;
-                $st = $st . $set;
-
-
-            } else {
-                $set = "$key = :" . $key . ", ";
-                $st = $st . $set;
-                $counter++;
-
-            }
-
-        }
-        $sql = " ";
-
-        $sql .= "UPDATE trustbook SET " . $st;
-        $sql .= " WHERE id = " . $id;
+    public function update($fields){
+        $sql ="UPDATE `trustbook` SET `userID`=:userID,`bookID`=:bookID,`writerID`=:writerID,`lend_of_book`=:lendOfBook,`to_take_back`=:ToTakeBook WHERE `id`=:id";
         $stmt = $this->connect()->prepare($sql);
-        foreach ($fields as $key => $value) {
-            $stmt->bindValue(':' . $key, $value);
-        }
-        $stmtExec = $stmt->execute();
-        if ($stmtExec) {
 
-            header('Location: index.php');
-        }
-    }
+        $stmt->bindparam(':id', $fields['id']);
+
+        $stmt->bindparam(':writerID', $fields['writerName']);
+        $stmt->bindparam(':userID', $fields['UserName']);
+        $stmt->bindparam(':bookID', $fields['bookName']);
+        $stmt->bindparam(':lendOfBook', $fields['date']);
+        $stmt->bindparam(':ToTakeBook', $fields['datee']);
+
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("record Edited");
+                window.location.href = ('listTrustBook.php');
+            </script>
+            <?php
+        } else {
+    ?>
+    <script>
+        alert("Error");
+        window.location.href = ('listTrustBook.php');
+    </script>
+    <?php
+}
+}
 
     public function destroy($id)
     {
