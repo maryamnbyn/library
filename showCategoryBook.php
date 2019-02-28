@@ -1,37 +1,11 @@
 <?php
    include "adminpannel/admin_forms/classes/Db.php" ;
    include "adminpannel/admin_forms/classes/book.php";
-   $books = new book();
+   include "userTheme/navbar.php";
+   $books   = new book();
    $results = $books->showcategory();
-   $book = new book();
+   $book    = new book();
 ?>
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Library</title>
-    <meta name="viewport" content="width=device-width , intial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--ink rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/jquery.min.js"></script>-->
-    <link rel="stylesheet" type="text/css" href="adminpannel/admin_forms/css/style.css">
-
-</head>
-
-<body>
-<div class="content">
-    <!-- notification message -->
-
-    <!-- logged in user information -->
-
-</div>
-
-<!--navbar-->
-<?php include "userTheme/navbar.php"?>
-
 <!--slide show-->
 <div>
     <div id="myCarousel" data-ride="carousel" class="carousel slide">
@@ -42,7 +16,6 @@
         </ol>
         <div class="carousel-inner">
             <div class="item active">
-
                 <img src="images/1.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
                 <div class="carousel-caption"
                 "br-border">
@@ -51,7 +24,6 @@
             </div>
         </div>
         <div class="item">
-
             <img src="images/2.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
                 <h3>Iraniyan Library </h3>
@@ -59,7 +31,6 @@
             </div>
         </div>
         <div class="item">
-
             <img src="images/3.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
             <div class="carousel-caption">
                 <h3>Iraniyan Library </h3>
@@ -120,17 +91,16 @@
         <div class="col-sm">
             <?php
             $book       = new book();
-            $images     = $book->showCategoryBook($_GET['id']);
-            foreach ($images as $image)
+            $books     = $book->showCategoryBook($_GET['id']);
+            foreach ($books as $book)
             {
             ?>
             <div class="col-md-3 card-body card style="width: 18rem;">
-            <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
-            <h5 class="card-title  "><?php echo "Name Of Book: ".$image['name'] ?></h5>
-            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($image['name'])?></h5>
-            <h5 class="card-title"><?php echo "Title Of Book: ".$image['title'] ?></h5>
-            <p class="card-text"><?php echo "Description Of Book: </br>".$image['description'] ?></p>
-            <a href="ShowInformation.php?id=<?php echo $image['bookID'];?>" class="btn btn-primary"> more Imformation</a>
+            <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage'] ?>"
+            <h5 class="card-title  "><?php echo "Name Of Book: ".$book['name'] ?></h5>
+            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($book['name'])?></h5>
+            <h5 class="card-title"><?php echo "Title Of Book: ".$book['title'] ?></h5>
+            <a href="ShowInformation.php?id=<?php echo $book['bookID'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
     </div>

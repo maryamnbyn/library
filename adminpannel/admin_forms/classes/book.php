@@ -8,8 +8,10 @@ class book extends Db
     {
         $sql    = "select * from book";
         $result = $this->connect()->query($sql);
-        if ($result->rowCount() > 0) {
-            while ($row = $result->fetch()) {
+        if ($result->rowCount() > 0)
+        {
+            while ($row = $result->fetch())
+            {
                 $data[] = $row;
             }
             return $data;
@@ -17,7 +19,7 @@ class book extends Db
     }
     public function bookCondition($name)
     {
-        $sql = "select trustbook.lend_of_book,trustbook.to_take_back,book.name
+        $sql    = "select trustbook.lend_of_book,trustbook.to_take_back,book.name
                 from trustbook,book
                 where(book.id = trustbook.bookID AND lend_of_book<now() AND NOW()<to_take_back)
 ";
@@ -46,7 +48,6 @@ class book extends Db
         if ($result->rowCount() > 0) {
             while ($row = $result->fetch()) {
                 $data[] = $row;
-
             }
             return $data;
         }
@@ -65,7 +66,6 @@ class book extends Db
             return $result;
         }
     }
-
     public function showOneBook($id)
     {
         {
@@ -92,7 +92,6 @@ class book extends Db
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
         $picBook          = rand(1000, 1000000).".".$imgExt;
         move_uploaded_file($tmp_dir, $upload_dir . $picBook);
-
         $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`bookImage`,`description`)
                 VALUES 
                 (:name ,:writerID ,:date_of_print,:title,:num_of_print,:categoryID,:bookImage,:description)
@@ -193,7 +192,6 @@ class book extends Db
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
-
     }
 }
 

@@ -3,10 +3,10 @@
     include "adminpannel/admin_forms/classes/Db.php";
     include "adminpannel/admin_forms/classes/book.php";
     include "adminpannel/admin_forms/classes/user.php";
-    $books   = new book();
+    $book   = new book();
     $results = $books->showcategory();
     $book    = new book();
-    $images  = $book->select();
+    $books  = $book->select();
 ?>
 <?php include "userTheme/navbar.php" ?>
 <!--slide show-->
@@ -20,16 +20,16 @@
     <div class="row">
         <div class="col-sm">
             <?php
-            foreach ($images as $image)
+            foreach ($books as $book)
             {
             ?>
             <div class="col-md-3  card-body card style=" width: 18rem;">
-            <img class="imgm text-left" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage']; ?>"
-            <h5 class="card-title  "><?php echo "Name Of Book: " . $image['name'] ?></h5>
-            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($image['name']) ?></h5>
-            <h5 class="card-title  "><?php echo "Title Of Book: " . $image['title'] ?></h5>
-            <p class="card-text"><?php echo $image['description'] ?></p>
-            <a href="ShowInformation.php?id=<?php echo $image['id']; ?>" class="btn btn-primary"> more Imformation</a>
+            <img class="imgm text-left" src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage']; ?>"
+            <h5 class="card-title  "><?php echo "Name Of Book: " . $book['name'] ?></h5>
+            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($book['name']) ?></h5>
+            <h5 class="card-title  "><?php echo "Title Of Book: " . $book['title'] ?></h5>
+            <p class="card-text"><?php echo $book['description'] ?></p>
+            <a href="ShowInformation.php?id=<?php echo $book['id']; ?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
     </div>

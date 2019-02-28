@@ -3,6 +3,8 @@ include "adminpannel/admin_forms/classes/writer.php";
 
 $writer = new writer();
 $writers = $writer->getwriters();
+$books   = new book();
+$results = $books->showcategory();
 ?>
 
 <!doctype html>
@@ -45,18 +47,13 @@ $writers = $writer->getwriters();
         <div class="navbar-header">
     <span class="navbar-nav" style="color: white">
     <?php  if (isset($_SESSION['username'])) : ?>
-
         <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
         <p> <a href="index.php" style="color: red;">logout</a> </p>
     <?php endif ?></span>
-
-
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-
-
             </button>
 
             <!--<a href="#" class="navbar-brand">christmas shopping</a>-->
@@ -71,7 +68,9 @@ $writers = $writer->getwriters();
                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">books Category <span
                             class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <?php foreach ($results as $result) { ?>
+                        <?php foreach ($results as $result)
+                        {
+                            ?>
                             <li class="dropdown"><a
                                     href="showCategoryBook.php?id=<?php echo $result['id']; ?>"><?php echo $result['title']; ?></a>
                             </li>

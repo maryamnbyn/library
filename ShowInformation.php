@@ -10,24 +10,24 @@
         <div class="img-about-us col-md-6">
             <?php
             $book   = new book();
-            $images = $book->showOneBook($_GET['id']);
-            foreach ($images as $image)
+            $books  = $book->showOneBook($_GET['id']);
+            foreach ($books as $book)
             {
             ?>
-            <img src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>" width="100%" height="450px" ;>
+            <img src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage'] ?>" width="100%" height="450px" ;>
             <!-- <div style ="background-image : url('images/4.jpg'); width :100% ; height:200px ;"> </div> -->
         </div>
         <div class="exp-about-us col-md-6">
             <h2>
-                <mark><?php echo $image['booktitle']?></mark>
+                <mark><?php echo $book['booktitle']?></mark>
             </h2>
             <h4>
-                <?php echo"Writer Name : ".$image['WriterName']?>
+                <?php echo"Writer Name : ".$book['WriterName']?>
             </h4>
 
             <p>
             <blockquote>
-                <?php echo $image['description']?>
+                <?php echo $book['description']?>
             </blockquote>
             </p>
 <?php };?>
