@@ -39,7 +39,7 @@
                     <th scope="col">discipline</th>
                     <th scope="col">city</th>
                     <th scope="col">email</th>
-                    <th scope="col">password</th>
+
 
                 </tr>
                 </thead>
@@ -60,7 +60,7 @@
                         <td><?php echo $row['discipline'];?></td>
                         <td><?php echo $row['city'];?></td>
                         <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['password'];?></td>
+
 
                         <td><a class="btn btn-sm btn-primary" href="edit_userList.php?id=<?php echo $row['id'];?>">Edit</a>&nbsp
                             <a class="btn btn-sm btn-danger" href="userList.php?del=<?php echo $row['id'];?>">Delete</a></td>

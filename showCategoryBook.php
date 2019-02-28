@@ -1,16 +1,10 @@
-<?php include "adminpannel/admin_forms/classes/Db.php" ;
-include "adminpannel/admin_forms/classes/book.php";
-
-
-
-
-$books = new book();
-$results = $books->showcategory();
-$book = new book();
-
-
+<?php
+   include "adminpannel/admin_forms/classes/Db.php" ;
+   include "adminpannel/admin_forms/classes/book.php";
+   $books = new book();
+   $results = $books->showcategory();
+   $book = new book();
 ?>
-
 <!doctype html>
 <html>
 <head>
@@ -45,8 +39,6 @@ $book = new book();
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
-
-
         </ol>
         <div class="carousel-inner">
             <div class="item active">
@@ -126,39 +118,29 @@ $book = new book();
 <div class="container">
     <div class="row">
         <div class="col-sm">
-
-
-            <?php $book = new book();
-            $images = $book->showCategoryBook($_GET['id']);
-            foreach ($images as $image){
+            <?php
+            $book       = new book();
+            $images     = $book->showCategoryBook($_GET['id']);
+            foreach ($images as $image)
+            {
             ?>
-
             <div class="col-md-3 card-body card style="width: 18rem;">
-
             <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
             <h5 class="card-title  "><?php echo "Name Of Book: ".$image['name'] ?></h5>
             <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($image['name'])?></h5>
             <h5 class="card-title"><?php echo "Title Of Book: ".$image['title'] ?></h5>
-
-
             <p class="card-text"><?php echo "Description Of Book: </br>".$image['description'] ?></p>
             <a href="ShowInformation.php?id=<?php echo $image['bookID'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
-
     </div>
 </div>
-
-
 <div class="pager-vn">
     <ul class="pager">
         <li class="previous"><a href="#">pre</a></li>
         <li class="next"><a href="#">next</a></li>
     </ul>
-
 </div>
-
-
 <!--footer-->
 </div>
 <div class="footer navbar-inverse text-center">

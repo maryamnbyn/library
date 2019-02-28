@@ -1,22 +1,18 @@
-<?php include "adminpannel/admin_forms/classes/Db.php" ;
-include "adminpannel/admin_forms/classes/book.php";
-
-
+<?php
+    include "adminpannel/admin_forms/classes/Db.php" ;
+    include "adminpannel/admin_forms/classes/book.php";
+    include "userTheme/navbar.php";
 ?>
-
-<?php include "userTheme/navbar.php"?>
-
 <!--slide show-->
-
-
 <!--about us-->
-
 <div class="about-us">
     <div class="container">
         <div class="img-about-us col-md-6">
-            <?php $book = new book();
+            <?php
+            $book   = new book();
             $images = $book->showOneBook($_GET['id']);
-            foreach ($images as $image){
+            foreach ($images as $image)
+            {
             ?>
             <img src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>" width="100%" height="450px" ;>
             <!-- <div style ="background-image : url('images/4.jpg'); width :100% ; height:200px ;"> </div> -->
@@ -31,7 +27,8 @@ include "adminpannel/admin_forms/classes/book.php";
 
             <p>
             <blockquote>
-                <?php echo $image['description']?>            </blockquote>
+                <?php echo $image['description']?>
+            </blockquote>
             </p>
 <?php };?>
         </div>
@@ -53,17 +50,11 @@ include "adminpannel/admin_forms/classes/book.php";
     </div>
 </div>
 <!--product-->
-
-
-
 <div class="pager-vn">
     <ul class="pager">
         <li class="previous"><a href="#"></a></li>
         <li class="next"><a href="#"></a></li>
     </ul>
-
 </div>
-
-
 <!--footer-->
 <?php include "userTheme/userFooter.php"?>

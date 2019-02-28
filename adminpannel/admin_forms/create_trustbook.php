@@ -1,18 +1,15 @@
 <?php
 function __autoload($class)
-{
+  {
     require_once "classes/$class.php";
-}
+  }
 if (isset($_POST['submit']))
-{
-
-
+  {
     $name     = $_POST['name'];
     $userID   = $_POST['userID'];
     $date     = $_POST['date'];
     $datee    = $_POST['datee'];
     $writerID = $_POST['writerID'];
-
     $fields =
         [
         'bookID'      => $name,
@@ -21,11 +18,9 @@ if (isset($_POST['submit']))
         'to_take_back'=> $datee,
         'writerID'    => $writerID,
         ];
-
     $trustbook = new trustbook();
     $trustbook->insert($fields);
-
-}
+  }
             $trustbook = new trustbook();
             $books     = $trustbook->getBooks();
             $trustbook = new trustbook();

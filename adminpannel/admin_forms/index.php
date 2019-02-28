@@ -3,7 +3,6 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
     $book = new book();

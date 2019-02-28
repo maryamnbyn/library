@@ -1,5 +1,4 @@
 <?php
-
     function __autoload($class)
     {
         require_once "classes/$class.php";
@@ -9,18 +8,12 @@
         $writer = new writer();
         $writer->editWriter($_POST);
     }
-
     if(isset($_GET['id']))
     {
         $uid    = $_GET['id'];
         $writer = new writer();
         $result = $writer->selectOne($uid);
-
     }
-
-
-
-
 ?>
 <html>
 <head>

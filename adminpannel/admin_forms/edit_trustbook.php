@@ -1,28 +1,26 @@
 <?php
-function __autoload($class)
-{
-    require_once "classes/$class.php";
-}
-if(isset($_GET['id'])){
-    $uid = $_GET['id'];
-    $trustbook = new trustbook();
-    $result =  $trustbook->selectOne($uid);
+  function __autoload($class)
+   {
+        require_once "classes/$class.php";
+   }
+  if(isset($_GET['id']))
+   {
+        $uid = $_GET['id'];
+        $trustbook = new trustbook();
+        $result =  $trustbook->selectOne($uid);
+   }
+  if (isset($_POST['submit']))
+   {
+        $book = new trustbook();
+        $book->update($_POST);
+   }
 
-}
-
-
-if (isset($_POST['submit'])) {
-    $book = new trustbook();
-    $book->update($_POST);
-
-
-}
-$trustbook = new trustbook();
-$books = $trustbook->getBooks();
-$trustbook = new trustbook();
-$users = $trustbook->getusers();
-$book = new writer();
-$writers = $book->getwriters();
+        $trustbook = new trustbook();
+        $books = $trustbook->getBooks();
+        $trustbook = new trustbook();
+        $users = $trustbook->getusers();
+        $book = new writer();
+        $writers = $book->getwriters();
 ?>
 <html>
 <head>

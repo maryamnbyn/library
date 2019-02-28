@@ -1,19 +1,11 @@
-<?php include "adminpannel/admin_forms/classes/Db.php" ;
-include "adminpannel/admin_forms/classes/book.php";
-
-
-
-
-$books = new book();
-$results = $books->showcategory();
-
-
-
+<?php
+     include "adminpannel/admin_forms/classes/Db.php" ;
+     include "adminpannel/admin_forms/classes/book.php";
+     include "userTheme/navbar.php";
+     $books = new book();
+     $results = $books->showcategory();
 ?>
-<?php include "userTheme/navbar.php"?>
 <!--slide show-->
-
-
 <!--about us-->
 <div class="about-us">
     <div class="container">
@@ -34,8 +26,6 @@ $results = $books->showcategory();
 
         </div>
     </div>
-
-
 </div>
 <!--icons-->
 <div class="glyphicon-vn">
@@ -54,38 +44,27 @@ $results = $books->showcategory();
 <div class="container">
     <div class="row">
         <div class="col-sm">
-
-
-            <?php $writer = new writer();
+            <?php
+            $writer  = new writer();
             $writers = $writer->getwriters();
-            foreach ($writers as $writer){
+            foreach ($writers as $writer)
+            {
             ?>
-
             <div class="col-md-3 card-body card style="width: 18rem;">
-
             <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $writer['image'] ?>"
             <h5 class="card-title  "><?php echo "Writer Name: ".$writer['name'] ?></h5>
             <h5 class="card-title"><?php echo "Writer Birthday: ".$writer['birthday'] ?></h5>
             <h5 class="card-title"><?php echo "Writer City: ".$writer['city'] ?></h5>
-
-
-
             <a href="showInformationWriters.php?id=<?php echo $writer['id'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
-
     </div>
 </div>
-
-
 <div class="pager-vn">
     <ul class="pager">
         <li class="previous"><a href="#">pre</a></li>
         <li class="next"><a href="#">next</a></li>
     </ul>
-
 </div>
-
-
 <!--footer-->
 <?php include "userTheme/userFooter.php"?>

@@ -1,19 +1,13 @@
-<?php include "adminpannel/admin_forms/classes/Db.php" ;
-include "adminpannel/admin_forms/classes/book.php";
-
-
-
-
-$books = new book();
-$results = $books->showcategory();
-
-
-
+<?php
+  include "adminpannel/admin_forms/classes/Db.php" ;
+  include "adminpannel/admin_forms/classes/book.php";
+  $books   = new book();
+  $results = $books->showcategory();
 ?>
-<?php include "userTheme/navbar.php"?>
+<?php
+  include "userTheme/navbar.php"
+?>
 <!--slide show-->
-
-
 <!--about us-->
 <div class="about-us">
     <div class="container">
@@ -31,11 +25,8 @@ $results = $books->showcategory();
                 The Iranian Library is situated in Acton, in West London and is the library of the Iranian community in the United Kingdom. It is the largest library in the world outside Iran by number of items catalogued. The library is a major research library, holding around 30 thousands items. In addition to books the library also keep manuscripts, journals, newspapers, magazines, sound and music recordings, videos, play-scripts, patents, databases, maps, stamps, prints, drawings. The library is also committed to increasing its stock of books for younger readers. It continuously receives copies of newly published Persian books both in Iran and abroad
             </blockquote>
             </p>
-
         </div>
     </div>
-
-
 </div>
 <!--icons-->
 <div class="glyphicon-vn">
@@ -56,19 +47,16 @@ $results = $books->showcategory();
         <div class="col-sm">
 
 
-            <?php $writer = new writer();
+            <?php
+            $writer = new writer();
             $books = $writer->showBooksWriter($_GET['id']);
             foreach ($books as $book){
             ?>
-
             <div class="col-md-3 card-body card style="width: 18rem;">
-
             <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage'] ?>"
             <h5 class="card-title  "><?php echo "Book Name: ".$book['name'] ?></h5>
             <h5 class="card-title"><?php echo "Book Title: ".$book['title'] ?></h5>
             <h5 class="card-title"><?php echo "Book Number Print: ".$book['date_of_print'] ?></h5>
-
-
             <p class="card-text"><?php echo "Description Of Book: </br>".$book['description'] ?></p>
             <a href="showInformation.php?id=<?php echo $book['id'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
@@ -76,16 +64,11 @@ $results = $books->showcategory();
 
     </div>
 </div>
-
-
 <div class="pager-vn">
     <ul class="pager">
         <li class="previous"><a href="#">pre</a></li>
         <li class="next"><a href="#">next</a></li>
     </ul>
-
 </div>
-
-
 <!--footer-->
 <?php include "userTheme/userFooter.php"?>

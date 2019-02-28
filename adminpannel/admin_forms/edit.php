@@ -1,26 +1,22 @@
 <?php
 function __autoload($class)
-{
+  {
     require_once "classes/$class.php";
-}
-
-if (isset($_GET['id'])) {
-    $uid = $_GET['id'];
-    $book = new book();
+  }
+if (isset($_GET['id']))
+  {
+    $uid    = $_GET['id'];
+    $book   = new book();
     $result = $book->selectOne($uid);
-}
-
-
+  }
 if (isset($_POST['submit'])) {
     $book = new book();
     $book->update($_POST, $_FILES);
-
-
-}
-$book = new writer();
-$writers = $book->getwriters();
-$category = new category();
-$categoryBooks = $category->getcategory();
+  }
+    $book           = new writer();
+    $writers        = $book->getwriters();
+    $category       = new category();
+    $categoryBooks  = $category->getcategory();
 ?>
 <html>
 <head>

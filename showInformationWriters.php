@@ -1,22 +1,17 @@
-<?php include "adminpannel/admin_forms/classes/Db.php" ;
+<?php
+include "adminpannel/admin_forms/classes/Db.php" ;
 include "adminpannel/admin_forms/classes/book.php";
-
-
-?>
-
-<?php include "userTheme/navbar.php"?>
-
+include "userTheme/navbar.php"?>
 <!--slide show-->
-
-
 <!--about us-->
-
 <div class="about-us">
     <div class="container">
         <div class="img-about-us col-md-6">
-            <?php $writer = new writer();
+            <?php
+            $writer = new writer();
             $writers = $writer->showOneWriter($_GET['id']);
-            foreach ($writers as $writer){
+            foreach ($writers as $writer)
+            {
             ?>
             <img src="adminpannel/admin_forms/uploads/<?php echo $writer['image'] ?>" width="100%" height="450px" ;>
             <!-- <div style ="background-image : url('images/4.jpg'); width :100% ; height:200px ;"> </div> -->
@@ -38,8 +33,6 @@ include "adminpannel/admin_forms/classes/book.php";
             <?php };?>
         </div>
     </div>
-
-
 </div>
 <!--icons-->
 <div class="glyphicon-vn">
@@ -55,9 +48,6 @@ include "adminpannel/admin_forms/classes/book.php";
     </div>
 </div>
 <!--product-->
-
-
-
 <div class="pager-vn">
     <ul class="pager">
         <li class="previous"><a href="#"></a></li>
@@ -65,7 +55,5 @@ include "adminpannel/admin_forms/classes/book.php";
     </ul>
 
 </div>
-
-
 <!--footer-->
 <?php include "userTheme/userFooter.php"?>

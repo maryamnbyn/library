@@ -4,16 +4,12 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if (isset($_POST['submit'])) {
+ if (isset($_POST['submit']))
+ {
   $user = new user();
   $user->addUser($_POST);
-
-
-
-}
+ }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 

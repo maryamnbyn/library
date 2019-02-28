@@ -7,9 +7,6 @@
     if (isset($_POST['submit'])) {
         $writer = new writer();
         $writer->addWriter($_POST,$_FILES);
-
-
-
     }
 ?>
 <!DOCTYPE html>
@@ -76,8 +73,6 @@
                         <label for="image">Writer Image:</label>
                     </div>
                 </div>
-
-
                 <input type="submit" name = "submit" class="btn btn-primary"></input>
             </form>
 

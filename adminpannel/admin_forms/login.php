@@ -13,12 +13,7 @@ if (isset($_POST['submit']))
     if (strlen($_POST['email']) < 5) { array_push($errors, "email must be atleast 6 letters in length"); }
     if (strlen($_POST['pass']) < 5){ array_push($errors, "password must be atleast 6 letters in length"); }
 }
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 

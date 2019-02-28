@@ -1,26 +1,19 @@
 <?php
-function __autoload($class)
-{
+    function __autoload($class)
+    {
     require_once "classes/$class.php";
-}
-if (isset($_POST['submit']))
-{
-
-    $user = new user();
-    $user->editUsers($_POST);
-}
-
-if(isset($_GET['id']))
-{
-    $uid    = $_GET['id'];
-    $user   = new user();
-    $result = $user->selectOne($uid);
-
-}
-
-
-
-
+    }
+    if (isset($_POST['submit']))
+    {
+        $user = new user();
+        $user->editUsers($_POST);
+    }
+    if(isset($_GET['id']))
+    {
+        $uid    = $_GET['id'];
+        $user   = new user();
+        $result = $user->selectOne($uid);
+    }
 ?>
 <html>
 <head>

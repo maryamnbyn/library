@@ -3,11 +3,12 @@ function __autoload($class)
 {
     require_once "classes/$class.php";
 }
-if (isset($_GET['del'])){
+   if (isset($_GET['del']))
+   {
     $id = $_GET['del'];
     $writer =new writer();
     $writer->destroy($id);
-}
+   }
 
 ?>
 <html>

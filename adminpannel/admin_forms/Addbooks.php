@@ -1,34 +1,26 @@
 <?php
-function __autoload($class)
-{
+    function __autoload($class)
+  {
     require_once "classes/$class.php";
-}
-
-if (isset($_POST['submit'])) {
+  }
+    if (isset($_POST['submit']))
+  {
     $book = new book();
     $book->addBook($_POST, $_FILES);
-
-
-}
-
-$book = new book();
-$categoryBooks = $book->categoryBook();
-$book = new book();
-$writers = $book->getwriters();
+  }
+    $book          = new book();
+    $categoryBooks = $book->categoryBook();
+    $book          = new book();
+    $writers       = $book->getwriters();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Add Books</title>
 
     <!-- Custom fonts for this template-->

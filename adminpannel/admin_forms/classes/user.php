@@ -1,12 +1,10 @@
 <?php
 
 require_once(__DIR__ . '/Db.php');
-session_start();
 
 class user extends Db
 {
     private $connection;
-
     public function __construct()
     {
         //connection
@@ -17,22 +15,20 @@ class user extends Db
             return "Connection failed: " . $e->getMessage();
         }
     }
-
-
     public function addUser($a)
     {
         $sql = "INSERT INTO `users`(`name`, `family`, `birthday`, `postcode`, `discipline`, `city`, `email`, `password`) 
-              VALUES 
-        (:name,:family,:birthday,:postcode,:discipline,:city,:email,:password);
+                VALUES 
+                (:name,:family,:birthday,:postcode,:discipline,:city,:email,:password);
 ";
         $stmt = $this->connection->prepare($sql);
-        $stmt->bindparam(':name', $a['name']);
-        $stmt->bindparam(':family', $a['lastName']);
-        $stmt->bindparam(':email', $a['email']);
-        $stmt->bindparam(':password', md5($a['password']));
-        $stmt->bindparam(':city', $a['city']);
-        $stmt->bindparam(':birthday', $a['birthday']);
-        $stmt->bindparam(':postcode', $a['postcode']);
+        $stmt->bindparam(':name'      , $a['name']);
+        $stmt->bindparam(':family'    , $a['lastName']);
+        $stmt->bindparam(':email'     , $a['email']);
+        $stmt->bindparam(':password'  , md5($a['password']));
+        $stmt->bindparam(':city'      , $a['city']);
+        $stmt->bindparam(':birthday'  , $a['birthday']);
+        $stmt->bindparam(':postcode'  , $a['postcode']);
         $stmt->bindparam(':discipline', $a['discipline']);
 
 
@@ -40,14 +36,16 @@ class user extends Db
         if ($stmt->execute())
         {
             $_SESSION['username'] = $a['name'];
-            $_SESSION['success'] = "You are now logged in";
+            $_SESSION['success']  = "You are now logged in";
             ?>
             <script>
                 alert("Add User Successful");
                 window.location.href = ('../../index1.php');
             </script>
             <?php
-        } else {
+        }
+        else
+            {
             ?>
             <script>
                 alert("Error");
@@ -61,7 +59,7 @@ class user extends Db
     public function selectUsers()
     {
 
-        $sql = "select * from users";
+        $sql    = "select * from users";
         $result = $this->connection->prepare($sql);
         $result->execute();
         return $result->fetchAll();
@@ -71,7 +69,7 @@ class user extends Db
 
     public function destroy($id)
     {
-        $sql = "DELETE FROM users WHERE id = :id";
+        $sql  = "DELETE FROM users WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -81,7 +79,7 @@ class user extends Db
     public function selectOne($id)
     {
 
-        $sql = "SELECT * FROM users WHERE id = :id";
+        $sql  = "SELECT * FROM users WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -93,43 +91,61 @@ class user extends Db
     public function editUsers($user)
     {
         $sql = "UPDATE `users` SET
-`name`=:fname,`family`=:lastName,`birthday`=:birthday,`postcode`=:postcode,`discipline`=:discipline,`city`=:city,`email`=:email,`password`=:password WHERE `id` =:id";
+                `name`=:fname,`family`=:lastName,`birthday`=:birthday,`postcode`=:postcode,`discipline`=:discipline,`city`=:city,`email`=:email,`password`=:password WHERE `id` =:id";
 
 
         $stmt = $this->connection->prepare($sql);
 
         $stmt->execute([
-            ":id" => $user['id'],
-            ":fname" => $user['name'],
-            ":lastName" => $user['lastName'],
-            ":birthday" => $user['birthday'],
-            ":postcode" => $user['postcode'],
+            ":id"         => $user['id'],
+            ":fname"      => $user['name'],
+            ":lastName"   => $user['lastName'],
+            ":birthday"   => $user['birthday'],
+            ":postcode"   => $user['postcode'],
             ":discipline" => $user['discipline'],
-            ":city" => $user['city'],
-            ":email" => $user['email'],
-            ":password" => $user['password']
+            ":city"       => $user['city'],
+            ":email"      => $user['email'],
+            ":password"   => $user['password']
         ]);
+        if ($stmt->execute()) {
+            ?>
+            <script>
+                alert("record Edited");
+                window.location.href = ('userList.php');
+            </script>
+            <?php
+        } else {
+            ?>
+            <script>
+                alert("Error");
+                window.location.href = ('userList.php');
+            </script>
+            <?php
+        }
     }
+
 
 
     public function userLogin($email, $pass)
     {
         if (!empty($email) && !empty($pass)) {
             $st = $this->connection->prepare("select * from users where email =:email and password=:password");
-            $st->bindParam(':email', $email);
 
+            $st->bindParam(':email', $email);
             $st->bindParam(':password', $pass);
             $st->execute();
-            if ($st->rowCount() == 1) {
+              if ($st->rowCount() == 1) {
                 $_SESSION['username'] = $email;
-                $_SESSION['success'] = "You are now logged in";
+                $_SESSION['success']  = "You are now logged in";
                 ?>
                 <script>
                     alert("User IS Login");
                     window.location.href = ('../../index1.php');
                 </script>
                 <?php
-            } else {
+            }
+              else
+                  {
                 ?>
                 <script>
                     alert("Error");
@@ -137,10 +153,7 @@ class user extends Db
                 </script>
                 <?php
             }
-
         }
-
-
     }
 }
 

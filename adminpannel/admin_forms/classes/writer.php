@@ -22,10 +22,10 @@ class writer extends Db
         {
 
             $sql = "select book.id , book.name , book.bookImage , book.title , book.date_of_print,book.description,
-writer.name as writerName
-from book 
-INNER JOIN writer on (writer.id = book.writerID)
-WHERE writer.id = :id  ";
+                    writer.name as writerName
+                    from book 
+                    INNER JOIN writer on (writer.id = book.writerID)
+                    WHERE writer.id = :id  ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindValue(":id", $id);
             $stmt->execute();
@@ -41,7 +41,6 @@ WHERE writer.id = :id  ";
         $images = $b['writerImage']['name'];
         $tmp_dir = $b['writerImage']['tmp_name'];
         $imagesize = $b['writerImage']['size'];
-
         $upload_dir = 'uploads/';
         $imgExt = strtolower(pathinfo($images, PATHINFO_EXTENSION));
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
@@ -57,16 +56,17 @@ WHERE writer.id = :id  ";
         $stmt->bindparam(':city', $a['city']);
         $stmt->bindparam(':description', $a['description']);
         $stmt->bindparam(':image', $picWriter);
-
-
-        if ($stmt->execute()) {
+        if ($stmt->execute())
+        {
             ?>
             <script>
                 alert("new witer Added");
                 window.location.href = ('writerList.php');
             </script>
             <?php
-        } else {
+        }
+        else
+            {
             ?>
             <script>
                 alert("Error");
@@ -74,16 +74,12 @@ WHERE writer.id = :id  ";
             </script>
             <?php
         }
-
-
     }
     public function showOneWriter($id)
     {
-
         {
-
             $sql = "Select * from writer 
-WHERE writer.id = :id
+                    WHERE writer.id = :id
  ";
             $stmt = $this->connect()->prepare($sql);
             $stmt->bindValue(":id", $id);
@@ -98,7 +94,6 @@ WHERE writer.id = :id
     {
         $sql = "select * from writer";
         $result = $this->connect()->query($sql);
-
         return $result->fetchAll();
 
 
@@ -107,7 +102,7 @@ WHERE writer.id = :id
     public function selectWriter()
     {
 
-        $sql = "select * from writer";
+        $sql    = "select * from writer";
         $result = $this->connection->prepare($sql);
         $result->execute();
         return $result->fetchAll();
@@ -117,7 +112,7 @@ WHERE writer.id = :id
 
     public function destroy($id)
     {
-        $sql = "DELETE FROM writer WHERE id = :id";
+        $sql  = "DELETE FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -127,8 +122,8 @@ WHERE writer.id = :id
     public function selectOne($id)
     {
 
-        $sql = "SELECT * FROM writer WHERE id = :id";
-        $stmt = $this->connect()->prepare($sql);
+        $sql    = "SELECT * FROM writer WHERE id = :id";
+        $stmt   = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -139,27 +134,26 @@ WHERE writer.id = :id
     public function editWriter($writer)
     {
         $sql = "UPDATE `writer` SET
-`name`=:fname,`birthday`=:birthday,`city`=:city WHERE `id` =:id";
-
-
+                `name`=:fname,`birthday`=:birthday,`city`=:city WHERE `id` =:id";
         $stmt = $this->connection->prepare($sql);
-
         $stmt->execute(
             [
-                ":id" => $writer['id'],
-                ":fname" => $writer['name'],
+                ":id"       => $writer['id'],
+                ":fname"    => $writer['name'],
                 ":birthday" => $writer['birthday'],
-                ":city" => $writer['city'],
+                ":city"     => $writer['city'],
             ]);
-
-        if ($stmt->execute()) {
+        if ($stmt->execute())
+        {
             ?>
             <script>
                 alert("record Edited");
                 window.location.href = ('writerList.php');
             </script>
             <?php
-        } else {
+        }
+        else
+            {
             ?>
             <script>
                 alert("Error");
