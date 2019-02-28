@@ -1,4 +1,3 @@
-
 <?php
 
 require_once(__DIR__ . '/Db.php');
@@ -17,18 +16,47 @@ class writer extends Db
             return "Connection failed: " . $e->getMessage();
         }
     }
-
-
-    public function addWriter($a)
+    public function showBooksWriter($id)
     {
-        $sql = "INSERT INTO `writer`(`name`, `birthday`, `city`) 
+
+        {
+
+            $sql = "select book.id , book.name , book.bookImage , book.title , book.date_of_print,book.description,
+writer.name as writerName
+from book 
+INNER JOIN writer on (writer.id = book.writerID)
+WHERE writer.id = :id  ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+
+        }
+    }
+
+
+    public function addWriter($a, $b)
+    {
+        $images = $b['writerImage']['name'];
+        $tmp_dir = $b['writerImage']['tmp_name'];
+        $imagesize = $b['writerImage']['size'];
+
+        $upload_dir = 'uploads/';
+        $imgExt = strtolower(pathinfo($images, PATHINFO_EXTENSION));
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
+        $picWriter = rand(1000, 1000000) . "." . $imgExt;
+        move_uploaded_file($tmp_dir, $upload_dir . $picWriter);
+        $sql = "INSERT INTO `writer`(`name`, `birthday`, `city`,`description`,`image`) 
               VALUES 
-        (:name,:birthday,:city);
+        (:name,:birthday,:city,:description,:image);
 ";
         $stmt = $this->connection->prepare($sql);
         $stmt->bindparam(':name', $a['name']);
         $stmt->bindparam(':birthday', $a['birthday']);
         $stmt->bindparam(':city', $a['city']);
+        $stmt->bindparam(':description', $a['description']);
+        $stmt->bindparam(':image', $picWriter);
 
 
         if ($stmt->execute()) {
@@ -48,8 +76,24 @@ class writer extends Db
         }
 
 
-
     }
+    public function showOneWriter($id)
+    {
+
+        {
+
+            $sql = "Select * from writer 
+WHERE writer.id = :id
+ ";
+            $stmt = $this->connect()->prepare($sql);
+            $stmt->bindValue(":id", $id);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+
+        }
+    }
+
     public function getwriters()
     {
         $sql = "select * from writer";
@@ -63,7 +107,7 @@ class writer extends Db
     public function selectWriter()
     {
 
-        $sql    = "select * from writer";
+        $sql = "select * from writer";
         $result = $this->connection->prepare($sql);
         $result->execute();
         return $result->fetchAll();
@@ -73,7 +117,7 @@ class writer extends Db
 
     public function destroy($id)
     {
-        $sql  = "DELETE FROM writer WHERE id = :id";
+        $sql = "DELETE FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -83,7 +127,7 @@ class writer extends Db
     public function selectOne($id)
     {
 
-        $sql  = "SELECT * FROM writer WHERE id = :id";
+        $sql = "SELECT * FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -123,7 +167,8 @@ class writer extends Db
             </script>
             <?php
         }
-    }}
+    }
+}
 
 
 

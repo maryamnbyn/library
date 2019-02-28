@@ -3,11 +3,12 @@ include "adminpannel/admin_forms/classes/book.php";
 include "adminpannel/admin_forms/classes/user.php";
 
 
+
 $books = new book();
 $results = $books->showcategory();
 $book = new book();
 $images = $book->select();
-$book = new book();
+
 
 
 ?>
@@ -29,9 +30,7 @@ $book = new book();
 
             <?php
 
-            foreach ($images
-
-            as $image){
+            foreach ($images as $image){
             ?>
 
             <div class="col-md-3  card-body card style=" width: 18rem;

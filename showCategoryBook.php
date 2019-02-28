@@ -10,9 +10,81 @@ $book = new book();
 
 
 ?>
-<?php include "userTheme/navbar.php"?>
-<!--slide show-->
 
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Library</title>
+    <meta name="viewport" content="width=device-width , intial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--ink rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.min.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="adminpannel/admin_forms/css/style.css">
+
+</head>
+
+<body>
+<div class="content">
+    <!-- notification message -->
+
+    <!-- logged in user information -->
+
+</div>
+
+<!--navbar-->
+<?php include "userTheme/navbar.php"?>
+
+<!--slide show-->
+<div>
+    <div id="myCarousel" data-ride="carousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+
+                <img src="images/1.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
+                <div class="carousel-caption"
+                "br-border">
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed.</p>
+            </div>
+        </div>
+        <div class="item">
+
+            <img src="images/2.jpg" alt="Iraniyan Library" style="width:100% ; height: 500px;">
+            <div class="carousel-caption">
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. </p>
+            </div>
+        </div>
+        <div class="item">
+
+            <img src="images/3.jpg" alt="happy chrismas" style="width:100% ; height: 500px;">
+            <div class="carousel-caption">
+                <h3>Iraniyan Library </h3>
+                <p>This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. </p>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">next</span>
+    </a>
+</div>
 
 <!--about us-->
 <div class="about-us">
@@ -88,4 +160,11 @@ $book = new book();
 
 
 <!--footer-->
-<?php include "userTheme/userFooter.php"?>
+</div>
+<div class="footer navbar-inverse text-center">
+    <span>copyrighy @Iraniyan Library 2018</span>
+</div>
+</div>
+</body>
+
+</html>

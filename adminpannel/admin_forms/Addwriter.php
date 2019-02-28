@@ -6,7 +6,7 @@
     }
     if (isset($_POST['submit'])) {
         $writer = new writer();
-        $writer->addWriter($_POST);
+        $writer->addWriter($_POST,$_FILES);
 
 
 
@@ -41,27 +41,42 @@
     <div class="card card-login mx-auto mt-5">
         <div class="card-header">Add Writer  </div>
         <div class="card-body">
-            <form method="post" action="">
+            <form method="post" action="" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="Name">Writer Name:</label>
 
                     <div class="form-label-group">
-                        <input type="text" name="name" class="form-control" placeholder="name" required="required" autofocus="autofocus">
+                        <input type="text" name="name" class="form-control" placeholder="name"  autofocus="autofocus">
                         <label for="inputEmail">name</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="date" name="birthday" class="form-control" placeholder="birthday" required="required">
+                        <input type="date" name="birthday" class="form-control" placeholder="birthday" >
                         <label for="birthday">birthday</label>
                     </div>
                 </div>
                 <div class="form-group">
+
                     <div class="form-label-group">
-                        <input type="text" name="city" class="form-control" placeholder="city" required="required">
+                        <input type="text" name="description" class="form-control" placeholder="description"  autofocus="autofocus">
+                        <label for="description">Writer Description:</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="text" name="city" class="form-control" placeholder="city" >
                         <label for="city">city</label>
                     </div>
                 </div>
+                <div class="form-group">
+
+                    <div class="form-label-group">
+                        <input type="file" name="writerImage" class="form-control" placeholder="image"  autofocus="autofocus">
+                        <label for="image">Writer Image:</label>
+                    </div>
+                </div>
+
 
                 <input type="submit" name = "submit" class="btn btn-primary"></input>
             </form>

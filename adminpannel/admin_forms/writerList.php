@@ -33,6 +33,8 @@ if (isset($_GET['del'])){
                     <th scope="col">Name</th>
                     <th scope="col">birthday</th>
                     <th scope="col">city</th>
+                    <th scope="col">description</th>
+                    <th scope="col">writerImage</th>
 
 
                 </tr>
@@ -50,6 +52,8 @@ if (isset($_GET['del'])){
                         <td><?php echo  $row['name'];?></td>
                         <td><?php echo $row['birthday'];?></td>
                         <td><?php echo $row['city'];?></td>
+                        <td><?php echo $row['description'];?></td>
+                        <td><?php echo $row['image'];?></td>
 
                         <td><a class="btn btn-sm btn-primary" href="edit_writer_List.php?id=<?php echo $row['id'];?>">Edit</a>&nbsp
                             <a class="btn btn-sm btn-danger" href="writerList.php?del=<?php echo $row['id'];?>">Delete</a></td>

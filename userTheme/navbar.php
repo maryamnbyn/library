@@ -1,3 +1,10 @@
+<?php
+include "adminpannel/admin_forms/classes/writer.php";
+
+$writer = new writer();
+$writers = $writer->getwriters();
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -72,7 +79,21 @@
                     </ul>
                 </li>
 
-                <li><a href="#">contact us</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Writers Book <span
+                                class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <?php foreach ($writers as $writer) { ?>
+                            <li class="dropdown"><a
+                                        href="showWriter.php?id=<?php echo $writer['id']; ?>"><?php echo $writer['name']; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </li>
+
+                <li><a href="showWriterImage.php">Writers</a></li>
+
+                    </ul>
+                </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
