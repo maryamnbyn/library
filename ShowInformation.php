@@ -15,7 +15,6 @@
             {
             ?>
             <img src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage'] ?>" width="100%" height="450px" ;>
-            <!-- <div style ="background-image : url('images/4.jpg'); width :100% ; height:200px ;"> </div> -->
         </div>
         <div class="exp-about-us col-md-6">
             <h2>

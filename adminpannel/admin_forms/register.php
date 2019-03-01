@@ -35,20 +35,20 @@ function __autoload($class)
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Register an Account</div></div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                                <input type="text" name="name" class="form-control" placeholder="First name"  autofocus="autofocus">
                                 <label for="firstName">First name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="lastName" class="form-control" placeholder="Last name" required="required">
+                                <input type="text" name="lastName" class="form-control" placeholder="Last name">
                                 <label for="lastName">Last name</label>
                             </div>
                         </div>
@@ -58,13 +58,13 @@ function __autoload($class)
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="email" name="email" class="form-control" placeholder="email" required="required" autofocus="autofocus">
+                                <input type="email" name="email" class="form-control" placeholder="email"  autofocus="autofocus">
                                 <label for="email">email</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="password" name="password" class="form-control" placeholder="password" required="required">
+                                <input type="password" name="password" class="form-control" placeholder="password" >
                                 <label for="password">password</label>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ function __autoload($class)
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="city" class="form-control" placeholder="city" required="required" autofocus="autofocus">
+                                <input type="text" name="city" class="form-control" placeholder="city"  autofocus="autofocus">
                                 <label for="city">city</label>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ function __autoload($class)
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="date" name="birthday" class="form-control" placeholder="birthday" required="required">
+                        <input type="date" name="birthday" class="form-control" placeholder="birthday" >
                         <label for="birthday">birthday</label>
                     </div>
                 </div>
@@ -91,7 +91,7 @@ function __autoload($class)
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="postcode" name="postcode" class="form-control" placeholder="Password" required="required">
+                                <input type="postcode" name="postcode" class="form-control" placeholder="Password" >
                                 <label for="inputPassword">postCode</label>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ function __autoload($class)
 
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="discipline" class="form-control" placeholder="discipline" required="required">
+                                <input type="text" name="discipline" class="form-control" placeholder="discipline" >
                                 <label for="discipline">discipline</label>
                             </div>
                         </div>

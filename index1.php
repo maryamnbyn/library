@@ -4,7 +4,7 @@
     include "adminpannel/admin_forms/classes/book.php";
     include "adminpannel/admin_forms/classes/user.php";
     $book   = new book();
-    $results = $books->showcategory();
+    $results = $book->showcategory();
     $book    = new book();
     $books  = $book->select();
 ?>

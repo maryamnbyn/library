@@ -1,11 +1,11 @@
 <?php
    include "adminpannel/admin_forms/classes/Db.php" ;
    include "adminpannel/admin_forms/classes/book.php";
-   include "userTheme/navbar.php";
    $books   = new book();
    $results = $books->showcategory();
    $book    = new book();
-?>
+
+include "userTheme/navbar.php"?>
 <!--slide show-->
 <div>
     <div id="myCarousel" data-ride="carousel" class="carousel slide">
@@ -91,16 +91,17 @@
         <div class="col-sm">
             <?php
             $book       = new book();
-            $books     = $book->showCategoryBook($_GET['id']);
-            foreach ($books as $book)
+            $images     = $book->showCategoryBook($_GET['id']);
+            foreach ($images as $image)
             {
             ?>
             <div class="col-md-3 card-body card style="width: 18rem;">
-            <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $book['bookImage'] ?>"
-            <h5 class="card-title  "><?php echo "Name Of Book: ".$book['name'] ?></h5>
-            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($book['name'])?></h5>
-            <h5 class="card-title"><?php echo "Title Of Book: ".$book['title'] ?></h5>
-            <a href="ShowInformation.php?id=<?php echo $book['bookID'];?>" class="btn btn-primary"> more Imformation</a>
+            <img class="imgm" src="adminpannel/admin_forms/uploads/<?php echo $image['bookImage'] ?>"
+            <h5 class="card-title  "><?php echo "Name Of Book: ".$image['name'] ?></h5>
+            <h5 class="card-title  text-danger"><?php $conditions = $book->bookCondition($image['name'])?></h5>
+            <h5 class="card-title"><?php echo "Title Of Book: ".$image['title'] ?></h5>
+            <p class="card-text"><?php echo "Description Of Book: </br>".$image['description'] ?></p>
+            <a href="ShowInformation.php?id=<?php echo $image['bookID'];?>" class="btn btn-primary"> more Imformation</a>
         </div>
         <?php } ?>
     </div>

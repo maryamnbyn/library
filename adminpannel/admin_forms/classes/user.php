@@ -15,6 +15,7 @@ class user extends Db
             return "Connection failed: " . $e->getMessage();
         }
     }
+
     public function addUser($a)
     {
         $sql = "INSERT INTO `users`(`name`, `family`, `birthday`, `postcode`, `discipline`, `city`, `email`, `password`) 
