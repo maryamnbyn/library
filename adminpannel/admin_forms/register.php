@@ -3,7 +3,7 @@ session_start();
 include "classes/UserController.php";
 
 $users = new \adminpannel\admin_forms\classes\UserController();
-$users->register();
+
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,17 @@ $users->register();
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header error">Register an Account<br> </div>
+        <div class="card-header error">Register an Account<br>
+            <?php $validations = $users->register();
+            foreach ($validations as $validation){
+
+
+                echo "<br>";
+                echo $validation[0] ;
+                echo "<br>";
+            }
+            ?>
+</div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">

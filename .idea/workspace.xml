@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3143b0af-d34a-4f6b-82da-6272c5dfcdbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/writer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/edit_Writer_List.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/register.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="110">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -37,17 +26,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2178">
-              <caret line="99" column="78" selection-start-line="99" selection-start-column="78" selection-end-line="99" selection-end-column="78" />
+            <state relative-caret-position="22">
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+            <state relative-caret-position="536">
+              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -143,8 +132,8 @@
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/Controller.php" />
         <option value="$PROJECT_DIR$/index2.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/register.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/register.php" />
       </list>
     </option>
   </component>
@@ -236,15 +225,15 @@
       <workItem from="1551074355372" duration="53905000" />
       <workItem from="1551191486431" duration="41464000" />
       <workItem from="1551431142821" duration="5212000" />
-      <workItem from="1551456357080" duration="32583000" />
+      <workItem from="1551456357080" duration="35145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289968000" />
+    <option name="totallyTimeSpent" value="292530000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
@@ -601,24 +590,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2178">
-          <caret line="99" column="78" selection-start-line="99" selection-start-column="78" selection-end-line="99" selection-end-column="78" />
+        <state relative-caret-position="22">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

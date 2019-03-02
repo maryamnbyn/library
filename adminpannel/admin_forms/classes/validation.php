@@ -24,6 +24,7 @@ class validation
     $this->data = $data;
 
     foreach ($rules as $item => $ruleset){
+
         $ruleset = explode('|' ,$ruleset);
         foreach ($ruleset as $rule){
             $pos = strpos($rule,":");

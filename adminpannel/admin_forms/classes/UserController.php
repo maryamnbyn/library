@@ -27,11 +27,8 @@ class UserController
         ];
         $validation =new validation();
         $valid = $validation->make($_POST , $rules);
-        var_dump($validation->getErrores());
-        $validation->getErrores();
-        if(!$valid){
-            var_dump($validation->getErrores());die();
-        }
-var_dump($_POST);die();
+
+         return ($validation->getErrores());
+        //var_dump($_POST);die();
     }
 }
