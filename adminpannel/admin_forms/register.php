@@ -1,14 +1,10 @@
 <?php
 session_start();
-function __autoload($class)
-{
-    require_once "classes/$class.php";
-}
- if (isset($_POST['submit']))
- {
-  $user = new user();
-  $user->addUser($_POST);
- }
+include "classes/UserController.php";
+
+$users = new \adminpannel\admin_forms\classes\UserController();
+$users->register();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +31,7 @@ function __autoload($class)
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div></div>
+        <div class="card-header error">Register an Account<br> </div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">
@@ -54,22 +50,7 @@ function __autoload($class)
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="form-row">
-                        <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="email" name="email" class="form-control" placeholder="email"  autofocus="autofocus">
-                                <label for="email">email</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="password" name="password" class="form-control" placeholder="password" >
-                                <label for="password">password</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
@@ -102,6 +83,28 @@ function __autoload($class)
                             <div class="form-label-group">
                                 <input type="text" name="discipline" class="form-control" placeholder="discipline" >
                                 <label for="discipline">discipline</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="email" name="email" class="form-control" placeholder="email"  autofocus="autofocus">
+                                        <label for="email">email</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="password" name="password" class="form-control" placeholder="password" >
+                                        <label for="password">password</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="password" name="confirm_password" class="form-control" placeholder="password" >
+                                        <label for="password">confirm_password</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

@@ -6,7 +6,7 @@
     if (isset($_POST['submit']))
     {
         $writer = new writer();
-        $writer->editWriter($_POST);
+        $writer->editWriter($_POST,$_FILES);
     }
     if(isset($_GET['id']))
     {
@@ -31,21 +31,21 @@
     <div class="card card-register mx-auto mt-5">
         <div class="card-header">Edit An User</div>
         <div class="card-body">
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <input type="hidden" name="id" value="<?= $result['id'] ?>">
 
-                                <input type="text" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus" value="<?=  $result['name'];?>">
+                                <input type="text" name="name" class="form-control" placeholder="First name"  autofocus="autofocus" value="<?=  $result['name'];?>">
                                 <label for="firstName">First name</label>
                             </div>
 
                         </div>
                         <div class="form-group">
                             <div class="form-label-group">
-                                <input type="date" name="birthday" class="form-control" placeholder="birthday" required="required" value="<?php echo $result['birthday'];?>">
+                                <input type="date" name="birthday" class="form-control" placeholder="birthday"  value="<?php echo $result['birthday'];?>">
                                 <label for="birthday">birthday</label>
                             </div>
                         </div>
@@ -56,8 +56,30 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="text" name="city" class="form-control" placeholder="city" required="required" autofocus="autofocus" value="<?php echo $result['city'];?>">
+                                <input type="text" name="city" class="form-control" placeholder="city"  autofocus="autofocus" value="<?php echo $result['city'];?>">
                                 <label for="city">city</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="text" name="description" class="form-control" placeholder="description"  autofocus="autofocus" value="<?php echo $result['description'];?>">
+                                <label for="description">description</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <input type="file" name="writerImage" class="form-control" placeholder="writerImage"  autofocus="autofocus" value="<?php echo $result['image'];?>">
+                                <label for="writerImage">writerImage</label>
                             </div>
                         </div>
 

@@ -16,6 +16,7 @@ class writer extends Db
             return "Connection failed: " . $e->getMessage();
         }
     }
+
     public function showBooksWriter($id)
     {
 
@@ -56,17 +57,14 @@ class writer extends Db
         $stmt->bindparam(':city', $a['city']);
         $stmt->bindparam(':description', $a['description']);
         $stmt->bindparam(':image', $picWriter);
-        if ($stmt->execute())
-        {
+        if ($stmt->execute()) {
             ?>
             <script>
                 alert("new witer Added");
                 window.location.href = ('writerList.php');
             </script>
             <?php
-        }
-        else
-            {
+        } else {
             ?>
             <script>
                 alert("Error");
@@ -75,6 +73,7 @@ class writer extends Db
             <?php
         }
     }
+
     public function showOneWriter($id)
     {
         {
@@ -102,7 +101,7 @@ class writer extends Db
     public function selectWriter()
     {
 
-        $sql    = "select * from writer";
+        $sql = "select * from writer";
         $result = $this->connection->prepare($sql);
         $result->execute();
         return $result->fetchAll();
@@ -112,7 +111,7 @@ class writer extends Db
 
     public function destroy($id)
     {
-        $sql  = "DELETE FROM writer WHERE id = :id";
+        $sql = "DELETE FROM writer WHERE id = :id";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
@@ -122,8 +121,8 @@ class writer extends Db
     public function selectOne($id)
     {
 
-        $sql    = "SELECT * FROM writer WHERE id = :id";
-        $stmt   = $this->connect()->prepare($sql);
+        $sql = "SELECT * FROM writer WHERE id = :id";
+        $stmt = $this->connect()->prepare($sql);
         $stmt->bindValue(":id", $id);
         $stmt->execute();
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -131,38 +130,46 @@ class writer extends Db
 
     }
 
-    public function editWriter($writer)
+    public function editWriter($a, $b)
     {
+        $images = $b['writerImage']['name'];
+        $tmp_dir = $b['writerImage']['tmp_name'];
+        $imagesize = $b['writerImage']['size'];
+        $upload_dir = 'uploads/';
+        $imgExt = strtolower(pathinfo($images, PATHINFO_EXTENSION));
+        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
+        $picWriter = rand(1000, 1000000) . "." . $imgExt;
+        move_uploaded_file($tmp_dir, $upload_dir . $picWriter);
         $sql = "UPDATE `writer` SET
-                `name`=:fname,`birthday`=:birthday,`city`=:city WHERE `id` =:id";
+                `name`=:fname,`birthday`=:birthday,`city`=:city, `description`=:description,`image`=:image WHERE `id` =:id";
         $stmt = $this->connection->prepare($sql);
-        $stmt->execute(
-            [
-                ":id"       => $writer['id'],
-                ":fname"    => $writer['name'],
-                ":birthday" => $writer['birthday'],
-                ":city"     => $writer['city'],
-            ]);
-        if ($stmt->execute())
-        {
+        $stmt->bindparam(':id', $a['id']);
+        $stmt->bindparam(':fname', $a['name']);
+        $stmt->bindparam(':birthday', $a['birthday']);
+        $stmt->bindparam(':city', $a['city']);
+        $stmt->bindparam(':description', $a['description']);
+        $stmt->bindparam(':image', $picWriter);
+        if ($stmt->execute()) {
             ?>
             <script>
-                alert("record Edited");
+                alert("Edit Writer");
                 window.location.href = ('writerList.php');
             </script>
             <?php
-        }
-        else
-            {
+        } else {
             ?>
             <script>
                 alert("Error");
-                window.location.href = ('writerList.php');
+                window.location.href = ('index.php');
             </script>
             <?php
         }
     }
 }
+
+
+
+
 
 
 
