@@ -29,6 +29,8 @@ class UserController
         $valid = $validation->make($_POST , $rules);
 
          return ($validation->getErrores());
+
         //var_dump($_POST);die();
     }
+
 }

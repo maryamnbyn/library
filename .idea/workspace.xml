@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3143b0af-d34a-4f6b-82da-6272c5dfcdbd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/adminpannel/admin_forms/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/adminpannel/admin_forms/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index2.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="66">
+              <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../store/store/server.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="29" column="61" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -26,17 +37,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="550">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="536">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="514">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -83,7 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/../store/store/index.php" />
         <option value="$PROJECT_DIR$/adminpannel/showTrustBook.php" />
         <option value="$PROJECT_DIR$/adminpannel/showCategoryBook.php" />
@@ -131,9 +141,10 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/Controller.php" />
         <option value="$PROJECT_DIR$/index2.php" />
+        <option value="D:/project TalkTel/project_2/project/adminpannel/admin_forms/register.php" />
+        <option value="$PROJECT_DIR$/adminpannel/admin_forms/register.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php" />
         <option value="$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php" />
-        <option value="$PROJECT_DIR$/adminpannel/admin_forms/register.php" />
       </list>
     </option>
   </component>
@@ -161,6 +172,24 @@
             <path>
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_forms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="adminpannel" type="462c0819:PsiDirectoryNode" />
+              <item name="admin_forms" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -172,7 +201,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../maryam/index.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../store/store/server.php" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -225,18 +254,18 @@
       <workItem from="1551074355372" duration="53905000" />
       <workItem from="1551191486431" duration="41464000" />
       <workItem from="1551431142821" duration="5212000" />
-      <workItem from="1551456357080" duration="35145000" />
+      <workItem from="1551456357080" duration="39858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292530000" />
+    <option name="totallyTimeSpent" value="297243000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2080537" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -282,13 +311,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/listTrustBook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -425,13 +447,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../store/store/server.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="33" column="3" lean-forward="true" selection-start-line="25" selection-start-column="2" selection-end-line="33" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -590,24 +605,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
+    <entry file="file://$PROJECT_DIR$/../store/store/server.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="536">
-          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+        <state relative-caret-position="427">
+          <caret line="29" column="61" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php">
+    <entry file="file://D:/project TalkTel/project_2/project/adminpannel/admin_forms/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        <state relative-caret-position="132">
+          <caret line="6" selection-start-line="6" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="66">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adminpannel/admin_forms/classes/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>

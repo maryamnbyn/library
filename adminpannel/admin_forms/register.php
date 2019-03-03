@@ -1,10 +1,15 @@
 <?php
 session_start();
 include "classes/UserController.php";
+include "classes/user.php";
 
 $users = new \adminpannel\admin_forms\classes\UserController();
-
-
+$validations = $users->register();
+if (isset($_POST['submit']) && $validations == null  )
+{
+    $user = new user();
+    $user->addUser($_POST);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,16 +37,18 @@ $users = new \adminpannel\admin_forms\classes\UserController();
 <div class="container">
     <div class="card card-register mx-auto mt-5">
         <div class="card-header error">Register an Account<br>
-            <?php $validations = $users->register();
-            foreach ($validations as $validation){
+            <?php
+            if (is_array($validations)){
+            foreach ($validations as $validation){?>
+<div class="m-1"><button class="btn btn-danger"> <?php echo $validation[0] ;?></button></div>
+               <?php
 
+            }}
 
-                echo "<br>";
-                echo $validation[0] ;
-                echo "<br>";
-            }
             ?>
-</div>
+            <?php /*        if(!$users->register()->$valid){
+                var_dump($users->register()->$validation()->getErrores());
+            } */?> </div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">

@@ -19,8 +19,9 @@ class validation
      * @param array $rules
      * @return bool
      */
-    public function make(Array $data , Array $rules){
-    $valid = true;
+    public function make(Array $data , Array $rules)
+    {
+    $valid      = true;
     $this->data = $data;
 
     foreach ($rules as $item => $ruleset){
@@ -28,17 +29,20 @@ class validation
         $ruleset = explode('|' ,$ruleset);
         foreach ($ruleset as $rule){
             $pos = strpos($rule,":");
-            if ($pos !== false){
+            if ($pos !== false)
+            {
                 $parametr =substr($rule,$pos+1);
                 $rule =substr($rule,0,$pos);
-            } else{
+            } else
+                {
                 $parametr="";
 
             }
             $MethodName = ucfirst($rule);
             $value =isset($data[$item]) ? $data[$item] : null;
             if (method_exists($this,$MethodName)){
-                if ($this->{$MethodName}($item,$value,$parametr)== false){
+                if ($this->{$MethodName}($item,$value,$parametr)== false)
+                {
                     $valid = false;
                     break;
                 }
@@ -55,7 +59,8 @@ class validation
     /**
      * @return mixed
      */
-    public function getErrores(){
+    public function getErrores()
+    {
     return $this->errors;
 }
 
@@ -64,7 +69,8 @@ class validation
      * @param $value
      * @return bool
      */
-    public function required($item , $value){
+    public function required($item , $value)
+    {
     if (strlen($value) == 0){
         $this->errors[$item][] = "پر کردن فیلد {$item} الزامیست";
     }
@@ -75,7 +81,8 @@ return true;
      * @param $item
      * @param $value
      */
-    public function email($item , $value ){
+    public function email($item , $value )
+    {
 
     if (!filter_var($value , FILTER_VALIDATE_EMAIL)){
         $this->errors[$item][]="فرمت ایمیل وارد شده صحیح نیست";
@@ -88,25 +95,31 @@ return true;
      * @param $value
      * @param $param
      */
-    public function min($item , $value , $param){
-if (strlen($value) < $param){
+    public function min($item , $value , $param)
+    {
+if (strlen($value) < $param)
+{
     $this->errors[$item][]="طول فیلد  {$item} کمتر از {$param} کاراکتر است";
     return false;
 }
 return true;
 }
 
-    public function max($item , $value , $param){
-        if (strlen($value) > $param){
+    public function max($item , $value , $param)
+    {
+        if (strlen($value) > $param)
+        {
             $this->errors[$item][]="طول فیلد {$param} نمیتواند بیشتر از {$item} کاراکتر شود";
             return false;
         }
         return true;
     }
-public function confirm($item,$value,$param){
+public function confirm($item,$value,$param)
+{
         $orginal = isset($this->data[$item]) ? $this->data[$item] : null ;
         $confirm = isset($this->data[$param]) ? $this->data[$param] : null ;
-        if ($orginal !== $confirm){
+        if ($orginal !== $confirm)
+        {
             $this->errors[$item][] = "فیلد {$item} با فیلد {$param} برابر نیست.";
  return false;
         }
