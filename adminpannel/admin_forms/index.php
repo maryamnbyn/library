@@ -24,7 +24,7 @@ if (isset($_GET['del'])) {
 
 <div class="col-md-10 mt-3">
     <div class="jumbotron">
-        <h4 class="mb-4">All Books</h4>
+        <h4 class="mb-4" >All Books</h4>
         <table class="table">
             <thead>
             <tr>
@@ -53,8 +53,19 @@ if (isset($_GET['del'])) {
                     <td><?php echo $row['description']; ?></td>
                     <td><?php echo $row['bookImage']; ?></td>
 
-                    <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>&nbsp
-                        <a class="btn btn-sm btn-danger" href="index.php?del=<?php echo $row['id']; ?>">Delete</a></td>
+                    <td><a class="btn btn-sm btn-primary" href="edit.php?id=<?php echo $row['id']; ?>" >Edit</a>&nbsp
+                        <a class="btn btn-sm btn-danger" onClick="deleteme(<?php echo $row['id']; ?>)" >Delete </a></td>
+                    <!--javascript function for deleting data -->
+
+                    <script language="javascript">
+                        function deleteme(id)
+                        {
+                            if(confirm("Do you want Delete!")){
+                                window.location.href='index.php?del='+id+'';
+                                return true;
+                            }
+                        }
+                    </script>
                 </tr>
                 <?php
 

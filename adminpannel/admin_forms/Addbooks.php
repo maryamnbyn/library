@@ -42,7 +42,7 @@ function __autoload($class)
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Add Books<br>
+        <div class="card-header" >Add Books<br>
             <?php
             if (is_array($validations))
             {

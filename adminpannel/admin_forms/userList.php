@@ -63,7 +63,18 @@
 
 
                         <td><a class="btn btn-sm btn-primary" href="edit_userList.php?id=<?php echo $row['id'];?>">Edit</a>&nbsp
-                            <a class="btn btn-sm btn-danger" href="userList.php?del=<?php echo $row['id'];?>">Delete</a></td>
+                            <a class="btn btn-sm btn-danger" onClick="deleteme(<?php echo $row['id']; ?>)" >Delete </a></td>
+                        <!--javascript function for deleting data -->
+
+                        <script language="javascript">
+                            function deleteme(id)
+                            {
+                                if(confirm("Do you want Delete!")){
+                                    window.location.href='userList.php?del='+id+'';
+                                    return true;
+                                }
+                            }
+                        </script>
                     </tr>
                     <?php
 

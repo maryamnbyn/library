@@ -45,7 +45,6 @@ class UserController
             'writerID'   => 'required',
             'categoryID' => 'required',
             'num'        => 'required',
-            'picbook'    => 'required',
             'description'=> 'required',
         ];
 

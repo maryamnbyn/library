@@ -17,6 +17,7 @@ class book extends Db
             return $data;
         }
     }
+
     public function bookCondition($name)
     {
         $sql    = "select trustbook.lend_of_book,trustbook.to_take_back,book.name
@@ -34,7 +35,8 @@ class book extends Db
                 $status = 1;
             }
         }
-        if($status == 0) {
+        if($status == 0)
+        {
             echo "Condition : You Can trust"." " . $name;
         }
     }
@@ -53,6 +55,8 @@ class book extends Db
         }
     }
     public function showCategoryBook($id)
+
+
     {
         {
             $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.description,book.title as booktitle,book.description, book.id as bookID
@@ -83,6 +87,8 @@ class book extends Db
         }
     }
     public function addbook($a, $b)
+
+
     {
         $images           = $b['picbook']['name'];
         $tmp_dir          = $b['picbook']['tmp_name'];
@@ -125,17 +131,23 @@ class book extends Db
         }
     }
     public function categoryBook()
+
+
     {
         $sql = "select * from categories";
         $result = $this->connect()->query($sql);
         return $result->fetchAll();
     }
     public function getwriters()
+
+
     {
         $sql = "select * from writer";
         $result = $this->connect()->query($sql);
         return $result->fetchAll();
     }
+
+
     public function selectOne($id)
     {
         $sql = "SELECT * FROM book WHERE id = :id";
@@ -145,6 +157,8 @@ class book extends Db
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
+
+
     public function update($a,$b)
     {
         $images           = $b['picbook']['name'];
