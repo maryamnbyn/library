@@ -4,7 +4,12 @@
     {
         require_once "classes/$class.php";
     }
-    if (isset($_POST['submit'])) {
+
+include "classes/UserController.php";
+
+$users = new \adminpannel\admin_forms\classes\UserController();
+$validations = $users->AddWriterValidation();
+    if (isset($_POST['submit']) && $validations == null  ) {
         $writer = new writer();
         $writer->addWriter($_POST,$_FILES);
     }
@@ -36,7 +41,17 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Add Writer  </div>
+        <div class="card-header">Add Writer  <br>
+            <?php
+            if (is_array($validations)){
+                foreach ($validations as $validation){?>
+                    <div class="m-1"><button class="btn btn-danger"> <?php echo $validation[0] ;?></button></div>
+                    <?php
+
+                }}
+
+            ?>
+        </div>
         <div class="card-body">
             <form method="post" action="" enctype="multipart/form-data">
                 <div class="form-group">

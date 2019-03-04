@@ -1,17 +1,22 @@
 <?php
-    function __autoload($class)
-  {
+function __autoload($class)
+{
     require_once "classes/$class.php";
-  }
-    if (isset($_POST['submit']))
-  {
+}
+
+   include "classes/UserController.php";
+   $users       = new \adminpannel\admin_forms\classes\UserController();
+   $validations = $users->addbookvalidation();
+
+
+  if (isset($_POST['submit']) && $validations == null) {
     $book = new book();
     $book->addBook($_POST, $_FILES);
-  }
-    $book          = new book();
-    $categoryBooks = $book->categoryBook();
-    $book          = new book();
-    $writers       = $book->getwriters();
+}
+   $book          = new book();
+   $categoryBooks = $book->categoryBook();
+   $book          = new book();
+   $writers       = $book->getwriters();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +42,23 @@
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Add Books</div>
+        <div class="card-header">Add Books<br>
+            <?php
+            if (is_array($validations))
+            {
+                foreach ($validations as $validation)
+                {
+                    ?>
+                    <div class="m-1">
+                        <button class="btn btn-danger"> <?php echo $validation[0]; ?></button>
+                    </div>
+                    <?php
+
+                }
+            }
+
+            ?>
+        </div>
         <div class="card-body">
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="form-group">
@@ -60,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="text" name="title" class="form-control" placeholder="Title" required="required">
+                        <input type="text" name="title" class="form-control" placeholder="Title">
                         <label for="inputTitle">Title</label>
                     </div>
                 </div>
@@ -81,8 +102,8 @@
                 <div class="form-group">
                     <div class="form-label-group">
                         <select type="text" name="categoryID" class="form-control" placeholder="categoryID"
-                               r>
-                        <label for="categoryID">categoryID</label>
+                                r>
+                            <label for="categoryID">categoryID</label>
                             <?php
                             foreach ($categoryBooks as $categoryBook) {
                                 ?>

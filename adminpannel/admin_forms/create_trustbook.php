@@ -3,7 +3,11 @@ function __autoload($class)
   {
     require_once "classes/$class.php";
   }
-if (isset($_POST['submit']))
+
+include "classes/UserController.php";
+$users = new \adminpannel\admin_forms\classes\UserController();
+$validations = $users->AddTrustBookValidation();
+if (isset($_POST['submit']) && $validations == null)
   {
     $name     = $_POST['name'];
     $userID   = $_POST['userID'];
@@ -57,7 +61,17 @@ if (isset($_POST['submit']))
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Add TrustBook</div>
+        <div class="card-header">Add TrustBook<br>
+            <?php
+            if (is_array($validations)){
+                foreach ($validations as $validation){?>
+                    <div class="m-1"><button class="btn btn-danger"> <?php echo $validation[0] ;?></button></div>
+                    <?php
+
+                }}
+
+            ?>
+        </div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">
@@ -67,7 +81,7 @@ if (isset($_POST['submit']))
 
                             <div class="form-label-group">
 
-                                <select type="text" name="name" class="form-control"  required="required" autofocus="autofocus">
+                                <select type="text" name="name" class="form-control"  autofocus="autofocus">
                                     <?php
                                     foreach ($books as $book){
                                         ?>
@@ -81,7 +95,7 @@ if (isset($_POST['submit']))
                             <label for="userID">Book Name:</label>
 
                             <div class="form-label-group">
-                                <select type="text" name="userID" class="form-control" placeholder="userID" required="required">
+                                <select type="text" name="userID" class="form-control" placeholder="userID" >
                                     <?php
                                     foreach ($users as $user){
                                         ?>
@@ -95,7 +109,7 @@ if (isset($_POST['submit']))
                             <label for="text">writer Name</label>
                             <div class="form-label-group">
 
-                                <select type="text" name="writerID" class="form-control" placeholder="userID" required="required">
+                                <select type="text" name="writerID" class="form-control" placeholder="userID" >
 
                                     <?php
                                     foreach ($writers as $writer){
@@ -111,13 +125,13 @@ if (isset($_POST['submit']))
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="date" name="date" class="form-control" placeholder="lend Of Book" required="required">
+                        <input type="date" name="date" class="form-control" placeholder="lend Of Book" >
                         <label for="lend_of_book">lend Of Book</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="date" name="datee" class="form-control" placeholder="To Take Back" required="required">
+                        <input type="date" name="datee" class="form-control" placeholder="To Take Back" >
                         <label for="to_take_back">To Take Back</label>
                     </div>
                 </div>

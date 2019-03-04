@@ -46,9 +46,7 @@ if (isset($_POST['submit']) && $validations == null  )
             }}
 
             ?>
-            <?php /*        if(!$users->register()->$valid){
-                var_dump($users->register()->$validation()->getErrores());
-            } */?> </div>
+ </div>
         <div class="card-body">
             <form action="" method="post">
                 <div class="form-group">
