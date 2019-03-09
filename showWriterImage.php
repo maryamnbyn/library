@@ -2,6 +2,7 @@
      include "adminpannel/admin_forms/classes/Db.php" ;
      include "adminpannel/admin_forms/classes/book.php";
      include "userTheme/navbar.php";
+     
      $books = new book();
      $results = $books->showcategory();
 ?>
