@@ -4,19 +4,21 @@ function __autoload($class)
     require_once "classes/$class.php";
 }
 
-   include "classes/UserController.php";
-   $users       = new \adminpannel\admin_forms\classes\UserController();
-   $validations = $users->addbookvalidation();
+include "classes/UserController.php";
+$users = new \adminpannel\admin_forms\classes\UserController();
+$validations = $users->addbookvalidation();
 
 
-  if (isset($_POST['submit']) && $validations == null) {
+if (isset($_POST['submit']) && $validations == null) {
     $book = new book();
     $book->addBook($_POST, $_FILES);
+
 }
-   $book          = new book();
-   $categoryBooks = $book->categoryBook();
-   $book          = new book();
-   $writers       = $book->getwriters();
+$book = new book();
+$categoryBooks = $book->categoryBook();
+$book = new book();
+$writers = $book->getwriters();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +26,8 @@ function __autoload($class)
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Add Books</title>
@@ -42,12 +46,10 @@ function __autoload($class)
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header" >Add Books<br>
+        <div class="card-header">Add Books<br>
             <?php
-            if (is_array($validations))
-            {
-                foreach ($validations as $validation)
-                {
+            if (is_array($validations)) {
+                foreach ($validations as $validation) {
                     ?>
                     <div class="m-1">
                         <button class="btn btn-danger"> <?php echo $validation[0]; ?></button>
@@ -65,6 +67,9 @@ function __autoload($class)
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
+
+                                <input type="hidden" name="id">
+
                                 <input type="text" name="name" class="form-control"
                                        autofocus="autofocus">
                                 <label for="Name">name</label>
@@ -123,26 +128,30 @@ function __autoload($class)
                                 <label for="Num Of Print">Num Of Print</label>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="file" name="picbook" class="form-control" placeholder="picbook"
-                                >
-                                <label for="picbook">Pictures Books</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="form-row">
 
-                        <div class="col-md-6">
-                            <div class="form-label-group">
-                                <input type="text" name="description" class="form-control" placeholder="description"
-                                >
-                                <label for="description">description</label>
+                        <div class="form-group">
+                            <div class="form-row">
+
+                                <div class="col-md-6">
+                                    <div class="form-label-group">
+                                        <input type="text" name="description" class="form-control" placeholder="description">
+                                        <label for="description">description</label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <fieldset id="buildyourform">
+                                    <input type="file" name="image[0]" class="form-control" placeholder="picbook">
+                                </fieldset>
+
+                            </div>
+
+                            <input type="button" value="+" class="add" id="add"/>
+                        </div>
                     </div>
                 </div>
                 <input type="submit" name="submit" class="btn btn-primary"></input>

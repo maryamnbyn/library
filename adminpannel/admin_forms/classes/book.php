@@ -17,7 +17,6 @@ class book extends Db
             return $data;
         }
     }
-
     public function bookCondition($name)
     {
         $sql    = "select trustbook.lend_of_book,trustbook.to_take_back,book.name
@@ -55,8 +54,6 @@ class book extends Db
         }
     }
     public function showCategoryBook($id)
-
-
     {
         {
             $sql = "SELECT book.name,categories.id ,categories.title ,book.bookImage ,book.description,book.title as booktitle,book.description, book.id as bookID
@@ -86,21 +83,24 @@ class book extends Db
             return $result;
         }
     }
-    public function addbook($a, $b)
-
-
+    public function addbook($a,$images)
     {
-        $images           = $b['picbook']['name'];
-        $tmp_dir          = $b['picbook']['tmp_name'];
-        $imagesize        = $b['picbook']['size'];
-        $upload_dir       = 'uploads/';
-        $imgExt           = strtolower(pathinfo($images, PATHINFO_EXTENSION));
-        $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
-        $picBook          = rand(1000, 1000000).".".$imgExt;
-        move_uploaded_file($tmp_dir, $upload_dir . $picBook);
-        $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`bookImage`,`description`)
+        foreach ($images['image']['name'] as $key => $val )
+        {
+            $filename     = $images['image']['name'][$key];
+            $filesize     = $images['image']['size'][$key];
+            $filetempname = $images['image']['tmp_name'][$key];
+            $upload_dir   = 'uploads/';
+            $img_ext      = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+            $pic          = mktime() . rand(1000, 1000000) . "." . $img_ext;
+            move_uploaded_file($filetempname, $upload_dir . $pic);
+
+        $sql = "INSERT INTO `book`(`name`,`writerID`, `date_of_print`, `title`, `num_of_print`, `categoryID` ,`description`)
                 VALUES 
-                (:name ,:writerID ,:date_of_print,:title,:num_of_print,:categoryID,:bookImage,:description)
+                (:name ,:writerID ,:date_of_print,:title,:num_of_print,:categoryID,:description);
+                
+                INSERT INTO `picbook`(`bookName`,`name`) 
+                VALUES (:bName,:pic)
 ";
         $stmt = $this->connect()->prepare($sql);
         $stmt->bindparam(':name', $a['name']);
@@ -110,7 +110,9 @@ class book extends Db
         $stmt->bindparam(':num_of_print', $a['num']);
         $stmt->bindparam(':categoryID', $a['categoryID']);
         $stmt->bindparam(':description', $a['description']);
-        $stmt->bindparam(':bookImage', $picBook);
+        $stmt->bindparam(':bName', $a['name']);
+        $stmt->bindparam(':pic', $pic);
+
         if ($stmt->execute())
         {
             ?>
@@ -130,24 +132,19 @@ class book extends Db
             <?php
         }
     }
+    }
     public function categoryBook()
-
-
     {
         $sql = "select * from categories";
         $result = $this->connect()->query($sql);
         return $result->fetchAll();
     }
     public function getwriters()
-
-
     {
         $sql = "select * from writer";
         $result = $this->connect()->query($sql);
         return $result->fetchAll();
     }
-
-
     public function selectOne($id)
     {
         $sql = "SELECT * FROM book WHERE id = :id";
@@ -157,8 +154,6 @@ class book extends Db
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
-
     public function update($a,$b)
     {
         $images           = $b['picbook']['name'];
@@ -167,7 +162,7 @@ class book extends Db
         $upload_dir       = 'uploads/';
         $imgExt           = strtolower(pathinfo($images, PATHINFO_EXTENSION));
         $valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'pdf');
-        $picBook          = rand(1000, 1000000).".".$imgExt;
+        $picBook          = mktime().rand(1000, 1000000).".".$imgExt;
         move_uploaded_file($tmp_dir, $upload_dir . $picBook);
         $sql ="UPDATE `book` SET 
                `writerID`=:writerID,`name`=:name,`date_of_print`=:date_of_print,`title`=:title,`num_of_print`=:num_of_print,`categoryID`=:categoryID,`bookImage`=:bookImage,`description`=:description WHERE `id`=:id";
@@ -208,6 +203,4 @@ class book extends Db
         $stmt->execute();
     }
 }
-
-
 ?>
